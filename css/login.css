@@ -4,8 +4,6 @@ body {
     background-color: #20639F;
 }
 
-/* ================= CONTAINER ================= */
-
 .container {
     display: flex;
     width: 900px;
@@ -15,8 +13,6 @@ body {
     border-radius: 10px;
     overflow: hidden;
 }
-
-/* ================= ESQUERDA ================= */
 
 .left {
     width: 50%;
@@ -28,8 +24,6 @@ body {
     object-fit: cover;
 }
 
-/* ================= DIREITA ================= */
-
 .right {
     width: 50%;
     padding: 30px;
@@ -39,14 +33,11 @@ body {
     align-items: center;
 }
 
-/* ================= LOGO ================= */
-
 .logo {
     width: 150px;
     margin-bottom: 20px;
 }
 
-/* ================= INPUT PADRÃO (EMAIL E SENHA) ================= */
 
 .right input {
     width: 100%;
@@ -63,8 +54,6 @@ body {
 
     box-sizing: border-box;
 }
-
-/* ================= SENHA BOX ================= */
 
 .senha-box {
     width: 100%;
@@ -87,7 +76,6 @@ body {
     box-sizing: border-box;
 }
 
-/* OLHO */
 .senha-box .eye {
     position: absolute;
     right: 12px;
@@ -98,8 +86,6 @@ body {
     font-size: 16px;
     color: #666;
 }
-
-/* ================= BOTÃO ================= */
 
 .right button {
     width: 100%;
@@ -115,7 +101,6 @@ body {
     cursor: pointer;
 }
 
-/* ================= LEMBRAR ================= */
 
 .lembrar {
     width: 100%;
@@ -123,7 +108,7 @@ body {
 
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* garante alinhamento */
+    justify-content: flex-start; 
 
     gap: 8px;
 
@@ -136,8 +121,6 @@ body {
     height: 16px;
     margin: 0;
 }
-
-/* ================= DIVIDER ================= */
 
 .divider {
     display: flex;
@@ -162,8 +145,6 @@ body {
     font-size: 14px;
     color: #666;
 }
-
-/* ================= SOCIAL ================= */
 
 .social-login {
     display: flex;

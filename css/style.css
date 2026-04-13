@@ -18,7 +18,6 @@ body {
   border-bottom: 4px solid #244c73;
 }
 
-/* ESQUERDA */
 .nav-left {
   justify-self: end;
   display: flex;
@@ -26,7 +25,6 @@ body {
   font-size: 24px;
 }
 
-/* DIREITA */
 .nav-right {
   display: flex;
   gap: 15px;
@@ -35,7 +33,6 @@ body {
   font-size: 24px;
 }
 
-/* LOGO CENTRAL */
 .logo {
   text-align: center;
 }
@@ -51,13 +48,12 @@ body {
   color: #244c73;
 }
 
-/* LINKS */
 .header a {
   text-decoration: none;
   color: #222;
   font-weight: 500;
 
-  padding: 10px 10px; /* 🔥 ajustado (antes era 20px e deixava tudo alto) */
+  padding: 10px 10px;
   display: inline-flex;
   align-items: center;
 }
@@ -66,7 +62,6 @@ body {
   color: #244c73;
 }
 
-/* LOGIN BUTTON */
 .header a.login-btn {
   margin-left: auto;
   border: 1px solid #244c73;
@@ -77,27 +72,25 @@ body {
   transition: 0.3s;
 }
 
-/* HOVER LOGIN */
 .header a.login-btn:hover {
   background: #244c73;
   border-color: #244c73;
   color: white !important;
 }
 
-/* HERO / BANNER */
 .hero {
   height: 50vh;
   width: 100%;
   background: url('../assets/aviaoinicio.jpg') center/cover no-repeat;
-  position: relative; /* importante */
+  position: relative; 
 }
 
 .hero h1 {
   position: absolute;
 
-  left: 50%;            /* centro real */
-  transform: translateX(-50%); /* ajusta pra não ficar torto */
-  bottom: 20px;         /* fica embaixo */
+  left: 50%;     
+  transform: translateX(-50%); 
+  bottom: 20px;         
 
   color: #244c73;
   font-size: 23px;
@@ -119,10 +112,6 @@ body {
   }
 }
 
-/* ================= SEÇÃO QUER VOAR ================= */
-
-/* ================= SEÇÃO QUER VOAR ================= */
-
 .voar {
   display: flex;
   justify-content: space-between;
@@ -132,61 +121,55 @@ body {
   background: white;
 }
 
-/* TEXTO ESQUERDA */
 .voar-texto {
   width: 50%;
 }
 
 .voar-texto h2 {
-  font-size: 46px; /* 🔥 maior */
+  font-size: 46px; 
   color: #244c73;
   margin-bottom: 20px;
 }
 
 .voar-texto p {
-  font-size: 28px; /* 🔥 maior */
+  font-size: 28px; 
   margin-bottom: 20px;
   color: #444;
 }
 
-/* LISTA */
 .voar-texto ul {
   margin-bottom: 25px;
   padding-left: 20px;
 }
 
 .voar-texto li {
-  font-size: 27px; /* 🔥 maior */
+  font-size: 27px;
   margin-bottom: 10px;
   transition: 0.3s;
   cursor: default;
 }
 
-/* 🔥 HOVER AZUL NOS ITENS */
 .voar-texto li:hover {
   color: #244c73;
-  transform: translateX(5px); /* efeito leve */
+  transform: translateX(5px);
 }
 
-/* BOTÃO WHATSAPP */
 .btn-whatsapp {
   display: inline-block;
   background: #25D366;
   color: white;
-  padding: 24px 50px; /* 🔥 maior */
+  padding: 24px 50px; 
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
   transition: 0.3s;
 }
 
-/* 🔥 HOVER DO BOTÃO */
 .btn-whatsapp:hover {
   background: #244c73;
   transform: scale(1.05);
 }
 
-/* IMAGEM DIREITA */
 .voar-img {
   width: 50%;
   display: flex;
@@ -266,9 +249,6 @@ body {
   background: #1a3552;
 }
 
-
-
-/* FAIXA AZUL */
 .faixa-contato {
   width: 100%;
   height: 110px;
@@ -280,7 +260,6 @@ body {
   margin-top: 80px;
 }
 
-/* TEXTO FAIXA */
 .faixa-texto {
   color: white;
 }
@@ -295,14 +274,12 @@ body {
   font-weight: bold;
 }
 
-/* LINHA AZUL CLARA */
 .linha-mapa {
   width: 100%;
   height: 6px;
   background: #5fa8d3;
 }
 
-/* MAPA */
 .mapa {
   width: 100%;
   margin: 0;
@@ -315,9 +292,6 @@ body {
   display: block;
 }
 
-/* FOOTER (SEM MEXER NO SEU LAYOUT) */
-
-/* FOOTER */
 .footer {
   background: white;
   color: #222;
@@ -325,7 +299,6 @@ body {
   border-top: 2px solid #eee;
 }
 
-/* CONTAINER */
 .footer-container {
   display: flex;
   justify-content: space-between;
@@ -333,25 +306,21 @@ body {
   gap: 40px;
 }
 
-/* LOGO (não mexe no layout) */
 .footer-logo img {
   width: 450px;
 }
 
-/* COLUNAS (NÃO ALTERA TEXTO) */
 .footer-contato,
 .footer-atendimento {
   max-width: 300px;
 }
 
-/* TÍTULOS */
 .footer h1 {
   font-size: 28px;
   color: #244c73;
   margin-bottom: 10px;
 }
 
-/* TEXTOS */
 .footer p {
   font-size: 18px;
   margin-bottom: 8px;
@@ -359,7 +328,6 @@ body {
   color: #222;
 }
 
-/* LINK WHATSAPP */
 .footer a {
   color: #25D366;
   text-decoration: none;
@@ -370,7 +338,6 @@ body {
   color: #1ebe5d;
 }
 
-/* COPYRIGHT */
 .copyright {
   background: linear-gradient(
     90deg,

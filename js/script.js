@@ -8,17 +8,14 @@ function cadastrar() {
         return;
     }
 
-    // 🔥 pega lista atual ou cria vazia
     let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-    // 🔥 adiciona novo usuário na lista
     usuarios.push({
         nome: nome,
         email: email,
         senha: senha
     });
 
-    // 🔥 salva de volta no navegador
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
     alert("Cadastro realizado!");
@@ -35,10 +32,8 @@ function login() {
         return;
     }
 
-    // 🔥 pega lista de usuários
     let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-    // 🔥 procura usuário correto
     const usuarioEncontrado = usuarios.find(u =>
         u.email === email && u.senha === senha
     );
