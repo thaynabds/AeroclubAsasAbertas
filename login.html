@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Asas Aberta</title>
+<link rel="stylesheet" href="css/login.css">
+<link rel="icon" type="image/x-icon" href="assets/fav32x32.png">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="left">
+        <img src="assets/piloto.jpg" alt="Piloto">
+    </div>
+
+    <div class="right">
+
+        <img src="assets/logo.svg" class="logo" alt="Logo">
+
+        <!-- EMAIL -->
+        <input type="email" id="email" placeholder="E-mail">
+
+        <!-- SENHA COM OLHO DENTRO -->
+        <div class="senha-box">
+            <input type="password" id="senha" placeholder="Senha">
+            <span class="eye" onclick="toggleSenha()">👁️</span>
+        </div>
+
+        <!-- LEMBRAR -->
+        <div class="lembrar">
+            <input type="checkbox" id="lembrar">
+            <label for="lembrar">Lembre-me</label>
+        </div>
+
+        <!-- BOTÃO LOGIN -->
+        <button onclick="login()">Entrar</button>
+
+        <!-- DIVIDER -->
+        <div class="divider">
+            <span>ou entre com</span>
+        </div>
+
+        <!-- SOCIAL LOGIN -->
+        <div class="social-login">
+
+            <button class="social-btn">
+                <img src="assets/Google.png" alt="Google">
+            </button>
+
+            <button class="social-btn">
+                <img src="assets/microsoft.png" alt="Microsoft">
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

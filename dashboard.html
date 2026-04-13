@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Asas Aberta</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/menu.css">
+<link rel="icon" type="image/x-icon" href="assets/fav32x32.png">
+</head>
+
+<body>
+
+<div class="menu">
+
+    <h2>Aeroclube</h2>
+
+    <button onclick="toggleMenu('treinamento')">Treinamento</button>
+    <div id="treinamento" class="submenu">
+        <a href="#">Agenda de Aulas Teóricas</a>
+        <a href="#">Cronograma</a>
+        <a href="#">Alunos</a>
+        <a href="#">Curso Teórico</a>
+    </div>
+
+    <button onclick="toggleMenu('voos')">Voos</button>
+    <div id="voos" class="submenu">
+        <a href="#">Agenda</a>
+        <a href="#">Histórico</a>
+        <a href="#">Ficha de Voos</a>
+        <a href="#">Escala Instrutores</a>
+        <a href="#">Sobreaviso</a>
+    </div>
+
+    <button onclick="toggleMenu('documentos')">Documentos</button>
+    <div id="documentos" class="submenu">
+        <a href="#">Certificados</a>
+        <a href="#">Avisos Operacionais</a>
+    </div>
+
+    <button onclick="toggleMenu('financeiro')">Financeiro</button>
+    <div id="financeiro" class="submenu">
+        <a href="#">Compra</a>
+        <a href="#">Vendas</a>
+    </div>
+
+    <button onclick="toggleMenu('extrato')">Extrato</button>
+    <div id="extrato" class="submenu">
+        <a href="#">Aluno</a>
+        <a href="#">Instrutor</a>
+    </div>
+
+        <select id="idioma" onchange="trocarIdioma()">
+        <option value="pt">Português</option>
+        <option value="en">English</option>
+    </select>
+
+    <hr>
+
+    <button onclick="logout()">Sair</button>
+
+</div>
+
+<div class="content">
+    <h1>Sistema General </h1>
+    <p> gerenciar o aeroclube.</p>
+</div>
+
+<script src="js/menu.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>
