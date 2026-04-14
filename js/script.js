@@ -26,7 +26,6 @@ function login() {
     const email = document.getElementById("email").value;
     const senha = document.getElementById("senha").value;
 
-    // 🔥 login especial fixo
     if (email === "dashboardgeneral" && senha === "*_aeroClube@") {
         window.location.href = "cadastro.html";
         return;
