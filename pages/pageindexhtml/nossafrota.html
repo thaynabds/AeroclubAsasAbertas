@@ -1,105 +1,226 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
-  <title>Aeroclube</title>
+  <title>Nossa Frota - Asas Abertas</title>
   <link rel="stylesheet" href="../../css/pageindexcss/nossafrota.css">
   <link rel="icon" type="image/x-icon" href="../../assets/fav32x32.png">
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+  <!-- ================= HEADER ================= -->
 
-<header class="header">
+  <header class="header">
 
-  <div class="nav-left">
-    <a href="../../index.html">Home</a>
-    <a href="sobrenos.html">Sobre nós</a>
-    <a href="#">Nossa Frota</a>
-    <a href="#">Oficina</a>
-  </div>
-
-  <div class="logo">
-    <img src="../../assets/logo.svg" alt="Logo">
-    <h2>Aeroclube de Pernambuco</h2>
-  </div>
-
-  <div class="nav-right">
-    <a href="#">Alojamento</a>
-    <a href="#">Blog</a>
-    <a href="#">Voo panorâmico</a>
-    <a href="#">Cursos</a>
-    <a href="../login.html" class="login-btn">Login</a>
-  </div>
-
-</header>
-
-<section class="hero">
-  <h1>DESDE 2026 FORMANDO PROFISSIONAIS DA AVIAÇÃO</h1>
-</section>
-
-<!-- ================= END HEADER ================= -->
-
-<!-- ================= MAIN ================= -->
-
-
-
-<!-- ================= END MAIN ================= -->
-
-
-<!-- ================= FOOTER ================= -->
-<div class="linha-mapa"></div>
-
-<section class="mapa">
-  <iframe src="https://www.google.com/maps?q=Senac%20Santo%20Amaro%20Recife&output=embed"></iframe>
-</section>
-
-<div class="linha-mapa"></div>
-
-<footer class="footer">
-
-  <div class="footer-container">
-
-    <div class="footer-logo">
-      <img src="../../assets/logo.svg">
+    <div class="nav-left">
+      <a href="../../index.html">Home</a>
+      <a href="sobrenos.html">Sobre nós</a>
+      <a href="#">Nossa Frota</a>
+      <a href="#">Oficina</a>
     </div>
 
-    <div class="footer-contato">
-      <h1>CONTATO</h1>
-      <p>(81) 98441-2643</p>
-      <p><a href="https://wa.me/5581984412643">WhatsApp</a></p>
-      <p>contato@pe.senac.br</p>
-      <p>Av. Visc. de Suassuna, 500 - Recife - PE</p>
+    <div class="logo">
+      <img src="../../assets/logo.svg" alt="Logo">
+      <h2>Aeroclube de Pernambuco</h2>
     </div>
 
-    <div class="footer-atendimento">
-      <h1>ATENDIMENTO</h1>
-      <p>Seg - Sex 07:30 às 19:00</p>
-      <p>Sáb - Dom 07:30 às 17:00</p>
+    <div class="nav-right">
+      <a href="alojamento.html">Alojamento</a>
+      <a href="blog.html">Blog</a>
+      <a href="voopanoramico.html">Voo panorâmico</a>
+      <a href="cursos.html">Cursos</a>
+      <a href="../../login.html" class="login-btn">Login</a>
+    </div>
+
+  </header>
+
+  <section class="hero">
+    <h1>NOSSA FROTA</h1>
+  </section>
+
+  <!-- ================= END HEADER ================= -->
+
+  <!-- ================= MAIN ================= -->
+
+  <main class="frota">
+
+    <!-- Aero Boero -->
+    <div class="aviao">
+      <img src="../../assets/boero.jpg" alt="Aero Boero">
+
+      <div class="info">
+        <h2>Aero Boero AB-115</h2>
+        <p><strong>Matrícula:</strong> PR-ABC</p>
+        <p><strong>Quantidade:</strong> 11 aeronaves</p>
+
+        <p class="descricao">
+          Aeronave amplamente utilizada em aeroclubes para treinamento básico.
+          Possui asa alta, excelente estabilidade e baixo custo operacional.
+        </p>
+
+        <ul>
+          <li><strong>Operação:</strong> VFR diurno</li>
+          <li><strong>Motor:</strong> Lycoming O-235</li>
+          <li><strong>Velocidade:</strong> 180 km/h</li>
+          <li><strong>Combustível:</strong> 110L</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Cessna 152 -->
+    <div class="aviao">
+      <img src="../../assets/cessna152.jpg" alt="Cessna 152">
+
+      <div class="info">
+        <h2>Cessna 152</h2>
+        <p><strong>Matrícula:</strong> PR-JSS</p>
+        <p><strong>Quantidade:</strong> 4 aeronaves</p>
+
+        <p class="descricao">
+          Um dos aviões de treinamento mais populares do mundo.
+          Econômico, confiável e ideal para pilotos iniciantes.
+        </p>
+
+        <ul>
+          <li><strong>Operação:</strong> VFR noturno</li>
+          <li><strong>Motor:</strong> Lycoming O-235</li>
+          <li><strong>Velocidade:</strong> 180 km/h</li>
+          <li><strong>Combustível:</strong> 94L</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Cessna 172 -->
+    <div class="aviao">
+      <img src="../../assets/cessna172.jpeg" alt="Cessna 172">
+
+      <div class="info">
+        <h2>Cessna 172</h2>
+        <p><strong>Matrícula:</strong> PT-XYZ</p>
+        <p><strong>Quantidade:</strong> 3 aeronaves</p>
+
+        <p class="descricao">
+          Muito comum em aeroclubes brasileiros, usado para treinamento avançado
+          e voos mais longos com maior conforto.
+        </p>
+
+        <ul>
+          <li><strong>Operação:</strong> VFR/IFR</li>
+          <li><strong>Motor:</strong> Lycoming 160HP</li>
+          <li><strong>Velocidade:</strong> 220 km/h</li>
+          <li><strong>Combustível:</strong> 212L</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Cherokee -->
+    <div class="aviao">
+      <img src="../../assets/pa28.jpg" alt="Cherokee">
+
+      <div class="info">
+        <h2>Piper PA-28 Cherokee</h2>
+        <p><strong>Matrícula:</strong> PT-IYQ</p>
+        <p><strong>Quantidade:</strong> 2 aeronaves</p>
+
+        <p class="descricao">
+          Avião de asa baixa bastante utilizado para formação e viagens curtas,
+          com boa estabilidade e desempenho.
+        </p>
+
+        <ul>
+          <li><strong>Operação:</strong> VFR noturno</li>
+          <li><strong>Motor:</strong> Lycoming 150HP</li>
+          <li><strong>Velocidade:</strong> 195 km/h</li>
+          <li><strong>Combustível:</strong> 180L</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Seneca -->
+    <!-- Paulistinha -->
+    <div class="aviao">
+      <img src="../../assets/paulistinha.jpg" alt="Paulistinha">
+
+      <div class="info">
+        <h2>Paulistinha CAP-4</h2>
+        <p><strong>Matrícula:</strong> PP-HIY</p>
+        <p><strong>Quantidade:</strong> 1 aeronave</p>
+
+        <p class="descricao">
+          O Paulistinha CAP-4 é uma aeronave clássica da aviação brasileira,
+          amplamente utilizada na formação de pilotos. Possui asa alta e
+          excelente estabilidade, sendo ideal para treinamento básico.
+        </p>
+
+        <ul>
+          <li><strong>Operação:</strong> VFR diurno</li>
+          <li><strong>Motor:</strong> Continental C85 (85HP)</li>
+          <li><strong>Velocidade:</strong> 135 km/h</li>
+          <li><strong>Combustível:</strong> 79L</li>
+        </ul>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ================= END MAIN ================= -->
+
+  <!-- ================= FOOTER ================= -->
+
+  <div class="linha-mapa"></div>
+
+  <section class="mapa">
+    <iframe src="https://www.google.com/maps?q=Senac%20Santo%20Amaro%20Recife&output=embed"></iframe>
+  </section>
+
+  <div class="linha-mapa"></div>
+
+  <footer class="footer">
+
+    <div class="footer-container">
+
+      <div class="footer-logo">
+        <img src="../../assets/logo.svg">
+      </div>
+
+      <div class="footer-contato">
+        <h1>CONTATO</h1>
+        <p>(81) 98441-2643</p>
+        <p><a href="https://wa.me/5581984412643">WhatsApp</a></p>
+        <p>contato@pe.senac.br</p>
+        <p>Av. Visc. de Suassuna, 500 - Recife - PE</p>
+      </div>
+
+      <div class="footer-atendimento">
+        <h1>ATENDIMENTO</h1>
+        <p>Seg - Sex 07:30 às 19:00</p>
+        <p>Sáb - Dom 07:30 às 17:00</p>
+      </div>
+
+    </div>
+
+  </footer>
+
+  <div class="copyright">
+
+    <div class="copyright-container">
+
+      <div class="copyright-logo">
+        <img src="../../assets/senac_logo_branco.png">
+      </div>
+
+      <div class="copyright-texto">
+        © 2026 Squad-43. Projeto desenvolvido para fins educacionais.
+      </div>
+
     </div>
 
   </div>
 
-</footer>
-
-<div class="copyright">
-
-  <div class="copyright-container">
-
-    <div class="copyright-logo">
-      <img src="../../assets/senac_logo_branco.png">
-    </div>
-
-    <div class="copyright-texto">
-      © 2026 Squad-35. Projeto desenvolvido para fins educacionais.
-    </div>
-
-  </div>
-
-</div>
-
-<!-- ================= END FOOTER ================= -->
+  <!-- ================= END FOOTER ================= -->
 
 </body>
+
 </html>

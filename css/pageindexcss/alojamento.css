@@ -1,4 +1,3 @@
-/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -53,7 +52,7 @@ body {
   text-decoration: none;
   color: #222;
   font-weight: 500;
-  padding: 10px 10px;
+  padding: 10px;
   display: inline-flex;
   align-items: center;
 }
@@ -67,31 +66,26 @@ body {
   border: 1px solid #244c73;
   border-radius: 3px;
   padding: 4px 12px;
-  display: inline-flex;
-  align-items: center;
   transition: 0.3s;
 }
 
 .header a.login-btn:hover {
   background: #244c73;
-  border-color: #244c73;
   color: white !important;
 }
-
-/* HERO (ORIGINAL) */
 
 .hero {
   height: 50vh;
   width: 100%;
-  background: url('../../assets/aeronaves.webp') center/cover no-repeat;
-  position: relative; 
+  background: url('../../assets/paulistinhanoite.png') center/cover no-repeat;
+  position: relative;
 }
 
 .hero h1 {
   position: absolute;
-  left: 50%;     
-  transform: translateX(-50%); 
-  bottom: 20px;         
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20px;
 
   color: #244c73;
   font-size: 23px;
@@ -100,7 +94,6 @@ body {
   padding: 20px;
   max-width: 670px;
 
-  opacity: 0;
   animation: aparecer 1.2s ease forwards;
 }
 
@@ -109,80 +102,77 @@ body {
   to { opacity: 1; }
 }
 
-.frota {
+.alojamento {
   padding: 60px 80px;
 }
 
-.titulo {
+/* topo texto */
+.alojamento-hero {
   text-align: center;
-  font-size: 40px;
-  color: #244c73;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 }
 
-.aviao {
+.alojamento-hero h1 {
+  font-size: 42px;
+  color: #244c73;
+  margin-bottom: 20px;
+}
+
+.alojamento-hero p {
+  font-size: 18px;
+  color: #444;
+  max-width: 900px;
+  margin: 10px auto;
+  line-height: 1.6;
+}
+
+/* cards */
+.alojamento-container {
   display: flex;
+  justify-content: center;
   gap: 40px;
-  margin-bottom: 60px;
-  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card-alojamento {
   background: white;
-  padding: 20px;
+  width: 520px;
   border-radius: 10px;
+  overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   transition: 0.3s;
 }
 
-.aviao:hover {
+.card-alojamento:hover {
   transform: translateY(-5px);
 }
 
-.aviao img {
-  width: 520px;
+.card-alojamento img {
+  width: 100%;
   height: 346px;
   object-fit: cover;
-  border-radius: 8px;
 }
 
-.info {
-  max-width: 600px;
+.info-alojamento {
+  padding: 20px;
 }
 
-.info h2 {
-  font-size: 28px;
+.info-alojamento h2 {
+  font-size: 26px;
   color: #244c73;
   margin-bottom: 10px;
 }
 
-.info p {
+.info-alojamento p {
   font-size: 16px;
-  margin-bottom: 6px;
-}
-
-.descricao {
-  margin: 15px 0;
   color: #444;
   line-height: 1.6;
-}
-
-.info ul {
-  margin-top: 10px;
-  padding-left: 20px;
-}
-
-.info li {
-  margin-bottom: 5px;
-  font-size: 15px;
 }
 
 .linha-mapa {
   width: 100%;
   height: 6px;
   background: #5fa8d3;
-}
-
-.mapa {
-  width: 100%;
-  margin: 0;
 }
 
 .mapa iframe {
@@ -194,25 +184,17 @@ body {
 
 .footer {
   background: white;
-  color: #222;
   padding: 40px 80px;
-  border-top: 2px solid #eee;
 }
 
 .footer-container {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
   gap: 40px;
 }
 
 .footer-logo img {
   width: 450px;
-}
-
-.footer-contato,
-.footer-atendimento {
-  max-width: 300px;
 }
 
 .footer h1 {
@@ -224,7 +206,6 @@ body {
 .footer p {
   font-size: 18px;
   margin-bottom: 8px;
-  line-height: 1.4;
   color: #222;
 }
 
@@ -246,7 +227,6 @@ body {
     #ffffff 100%
   );
   padding: 20px 80px;
-  border-top: 1px solid #eee;
 }
 
 .copyright-container {
@@ -263,18 +243,5 @@ body {
   flex: 1;
   text-align: center;
   font-size: 13px;
-  color: #222;
 }
 
-/* RESPONSIVO */
-
-@media (max-width: 900px) {
-  .aviao {
-    flex-direction: column;
-  }
-
-  .aviao img {
-    width: 100%;
-    height: auto;
-  }
-}

@@ -5,10 +5,6 @@
   font-family: Arial, sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   background: #f5f5f5;
 }
@@ -20,17 +16,6 @@ body {
   padding: 20px 40px;
   background: white;
   border-bottom: 4px solid #244c73;
-  transition: all 0.3s ease;
-  z-index: 1000;
-}
-
-.header.fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .nav-left {
@@ -67,8 +52,7 @@ body {
   text-decoration: none;
   color: #222;
   font-weight: 500;
-
-  padding: 10px 10px;
+  padding: 10px;
   display: inline-flex;
   align-items: center;
 }
@@ -82,181 +66,137 @@ body {
   border: 1px solid #244c73;
   border-radius: 3px;
   padding: 4px 12px;
-  display: inline-flex;
-  align-items: center;
   transition: 0.3s;
 }
 
 .header a.login-btn:hover {
   background: #244c73;
-  border-color: #244c73;
   color: white !important;
 }
 
 .hero {
   height: 50vh;
   width: 100%;
-  background: url('../../assets/aviaosobrenos.jpg') center/cover no-repeat;
-  position: relative; 
+  background: url('../../assets/cursos.jpg') center/cover no-repeat;
+  position: relative;
 }
 
 .hero h1 {
   position: absolute;
-
-  left: 50%;     
-  transform: translateX(-50%); 
-  bottom: 20px;         
-
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20px;
   color: #244c73;
   font-size: 23px;
-
   background: rgba(255,255,255,0.7);
   padding: 20px;
   max-width: 670px;
-
   opacity: 0;
-  animation: aparecer 1.2s ease forwards 0.3s, slideDown 1s ease forwards 0.3s;
-  animation-fill-mode: forwards;
+  animation: aparecer 1.2s ease forwards;
 }
 
 @keyframes aparecer {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-@keyframes slideDown {
-  from {
-    transform: translateX(-50%) translateY(-30px);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateX(-50%) translateY(0);
-    opacity: 1;
-  }
-}
-
-.voar {
+.cursos {
   padding: 60px 80px;
-  background: white;
 }
 
-.voar-titulo {
-  font-size: 36px;
+.cursos-titulo {
+  text-align: center;
+  font-size: 40px;
   color: #244c73;
-  margin-bottom: 40px;
-  text-align: left;
-}
-
-.voar-conteudo {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  margin-bottom: 40px;
-}
-
-.voar-coluna {
-  text-align: justify;
-}
-
-.voar-coluna p {
-  font-size: 20px;
-  line-height: 1.8;
-  color: #666;
   margin-bottom: 20px;
 }
 
-.voar-divisor {
-  border: none;
-  border-top: 2px solid #ddd;
-  margin: 40px 0;
-}
-
-.voar-secoes {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  margin-bottom: 40px;
-}
-
-.voar-secao h3 {
+.cursos-intro {
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto 40px auto;
   font-size: 18px;
-  color: #244c73;
-  margin-bottom: 15px;
-  font-weight: bold;
-}
-
-.voar-secao p {
-  font-size: 14px;
-  line-height: 1.8;
-  color: #666;
-  text-align: justify;
-}
-
-.voar-lista {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.voar-lista li {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 10px;
-  padding-left: 25px;
-  position: relative;
+  color: #333;
   line-height: 1.6;
 }
 
-.voar-lista li:before {
-  content: "●";
+/* CARDS */
+
+.cursos-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.curso-card {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.curso-card:hover {
+  transform: translateY(-5px);
+}
+
+.curso-card h2 {
   color: #244c73;
-  position: absolute;
-  left: 0;
-  font-size: 12px;
+  margin-bottom: 10px;
+  font-size: 20px;
 }
 
-.voar-rodape {
-  font-size: 14px;
-  color: #666;
+.curso-card p {
+  color: #333;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.voo-cta {
+  margin-top: 50px;
   text-align: center;
-  font-weight: bold;
-  line-height: 1.8;
-}
-
-.secao-fachada {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: #244c73;
-  padding: 40px 20px;
-  margin: 0;
+  color: white;
+  padding: 40px;
+  border-radius: 10px;
+  transition: 0.3s ease;
 }
 
-.img-fachada {
-  width: 90%;
-  max-width: 1000px;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  border-radius: 8px;
+.voo-cta h2 {
+  margin-bottom: 10px;
+}
+
+.voo-cta p {
+  margin-bottom: 20px;
+}
+
+.voo-cta a {
+  background: #fff;
+  color: #244c73;
+  padding: 12px 25px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.3s ease;
+  border: 1px solid #244c73;
+}
+
+.voo-cta a:hover {
+  background: #244c73;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.voo-cta:has(a:hover) {
+  background: #fff;
+  color: #244c73;
 }
 
 .linha-mapa {
   width: 100%;
   height: 6px;
   background: #5fa8d3;
-}
-
-.mapa {
-  width: 100%;
-  margin: 0;
 }
 
 .mapa iframe {
@@ -276,17 +216,11 @@ body {
 .footer-container {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
   gap: 40px;
 }
 
 .footer-logo img {
   width: 450px;
-}
-
-.footer-contato,
-.footer-atendimento {
-  max-width: 300px;
 }
 
 .footer h1 {
@@ -298,8 +232,6 @@ body {
 .footer p {
   font-size: 18px;
   margin-bottom: 8px;
-  line-height: 1.4;
-  color: #222;
 }
 
 .footer a {
@@ -320,7 +252,6 @@ body {
     #ffffff 100%
   );
   padding: 20px 80px;
-  border-top: 1px solid #eee;
 }
 
 .copyright-container {
@@ -339,3 +270,4 @@ body {
   font-size: 13px;
   color: #222;
 }
+

@@ -6,68 +6,284 @@
 
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/menu.css">
+
 <link rel="icon" type="image/x-icon" href="assets/fav32x32.png">
 </head>
 
 <body>
 
-<div class="menu">
+<div class="container">
 
-    <h2>Aeroclube</h2>
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
 
-    <button onclick="toggleMenu('treinamento')">Treinamento</button>
-    <div id="treinamento" class="submenu">
-        <a href="#">Agenda de Aulas Teóricas</a>
-        <a href="#">Cronograma</a>
-        <a href="#">Alunos</a>
-        <a href="#">Curso Teórico</a>
+    <!-- LOGO -->
+    <div class="logo">
+      <img src="assets/logosemfundo.png" alt="Aeroclub Logo">
     </div>
 
-    <button onclick="toggleMenu('voos')">Voos</button>
-    <div id="voos" class="submenu">
-        <a href="#">Agenda</a>
-        <a href="#">Histórico</a>
-        <a href="#">Ficha de Voos</a>
-        <a href="#">Escala Instrutores</a>
-        <a href="#">Sobreaviso</a>
+    <div class="user-info">
+      <strong>João Silva</strong>
+      <span>Instrutor de Voo</span>
     </div>
 
-    <button onclick="toggleMenu('documentos')">Documentos</button>
-    <div id="documentos" class="submenu">
-        <a href="#">Certificados</a>
-        <a href="#">Avisos Operacionais</a>
-    </div>
+    <div class="language">Português</div>
 
-    <button onclick="toggleMenu('financeiro')">Financeiro</button>
-    <div id="financeiro" class="submenu">
-        <a href="#">Compra</a>
-        <a href="#">Vendas</a>
-    </div>
+    <nav>
+      <ul>
 
-    <button onclick="toggleMenu('extrato')">Extrato</button>
-    <div id="extrato" class="submenu">
-        <a href="#">Aluno</a>
-        <a href="#">Instrutor</a>
-    </div>
+        <!-- INÍCIO -->
+        <li class="menu-item">
+          <img class="menu-icon" src="assets/icon-inicio.svg" alt="">
+          <span>Início</span>
+        </li>
 
-        <select id="idioma" onchange="trocarIdioma()">
-        <option value="pt">Português</option>
-        <option value="en">English</option>
-    </select>
+        <!-- AGENDA -->
+        <li class="menu-item">
+          <img class="menu-icon" src="assets/icon-agenda.svg" alt="">
+          <span>Agenda</span>
+        </li>
 
-    <hr>
+        <!-- TREINAMENTO -->
+        <li class="dropdown">
 
-    <button onclick="logout()">Sair</button>
+          <div class="menu-title">
+            <div class="menu-left">
+              <img class="menu-icon" src="assets/icon-treinamento.svg" alt="">
+              <span>Treinamento</span>
+            </div>
 
-</div>
+            <img class="arrow-icon" src="assets/vector.svg" alt="">
+          </div>
 
-<div class="content">
-    <h1>Sistema General </h1>
-    <p> gerenciar o aeroclube.</p>
+          <ul class="submenu">
+
+            <li>
+              <img class="submenu-icon" src="assets/icon-cronograma.svg" alt="">
+              <span>Cronogramas de Aulas Teóricas (Ementa)</span>
+            </li>
+
+            <li>
+              <img class="submenu-icon" src="assets/icon-alunos.svg" alt="">
+              <span>Alunos (Diário do Professor)</span>
+            </li>
+
+            <li>
+              <img class="submenu-icon" src="assets/icon-curso.svg" alt="">
+              <span>Curso Teórico</span>
+            </li>
+
+          </ul>
+        </li>
+
+        <!-- VOOS -->
+        <li class="dropdown">
+
+          <div class="menu-title">
+            <div class="menu-left">
+              <img class="menu-icon" src="assets/icon-voos.svg" alt="">
+              <span>Voos</span>
+            </div>
+
+            <img class="arrow-icon" src="assets/vector.svg" alt="">
+          </div>
+
+          <ul class="submenu">
+
+            <li>
+              <img class="submenu-icon" src="assets/icon-historico.svg" alt="">
+              <span>Histórico de Voos</span>
+            </li>
+
+            <li>
+              <img class="submenu-icon" src="assets/icon-ficha.svg" alt="">
+              <span>Ficha de Voos</span>
+            </li>
+
+            <li>
+              <img class="submenu-icon" src="assets/icon-escala.svg" alt="">
+              <span>Escala de Voos (Instrutores)</span>
+            </li>
+
+            <li>
+              <img class="submenu-icon" src="assets/icon-reserva.svg" alt="">
+              <span>Escala Reserva/Sobreaviso</span>
+            </li>
+
+          </ul>
+        </li>
+
+        <!-- DOCUMENTOS -->
+        <li class="dropdown">
+
+          <div class="menu-title">
+            <div class="menu-left">
+              <img class="menu-icon" src="assets/icon-documentos.svg" alt="">
+              <span>Documentos</span>
+            </div>
+
+            <img class="arrow-icon" src="assets/vector.svg" alt="">
+          </div>
+
+          <ul class="submenu">
+
+            <li>
+              <img class="submenu-icon" src="assets/icon-certificado.svg" alt="">
+              <span>Certificados</span>
+            </li>
+
+            <li>
+              <img class="submenu-icon" src="assets/icon-avisos.svg" alt="">
+              <span>Avisos Operacionais</span>
+            </li>
+
+          </ul>
+        </li>
+
+        <!-- FINANCEIRO -->
+        <li class="dropdown">
+
+          <div class="menu-title">
+            <div class="menu-left">
+              <img class="menu-icon" src="assets/icon-financeiro.svg" alt="">
+              <span>Financeiro</span>
+            </div>
+
+            <img class="arrow-icon" src="assets/vector.svg" alt="">
+          </div>
+
+          <ul class="submenu">
+
+            <li>
+              <img class="submenu-icon" src="assets/icon-compra.svg" alt="">
+              <span>Compra - Aula</span>
+            </li>
+
+            <li>
+              <img class="submenu-icon" src="assets/icon-compra.svg" alt="">
+              <span>Compra - Voos</span>
+            </li>
+
+            <li>
+              <img class="submenu-icon" src="assets/icon-compra.svg" alt="">
+              <span>Compra - Aluguel</span>
+            </li>
+
+            <li>
+              <img class="submenu-icon" src="assets/icon-venda.svg" alt="">
+              <span>Vendas (Instrutores) - Aula</span>
+            </li>
+
+            <li>
+              <img class="submenu-icon" src="assets/icon-venda.svg" alt="">
+              <span>Vendas (Instrutores) - Voos</span>
+            </li>
+
+            <li>
+              <img class="submenu-icon" src="assets/icon-venda.svg" alt="">
+              <span>Vendas (Instrutores) - Aluguel</span>
+            </li>
+
+            <li>
+              <img class="submenu-icon" src="assets/icon-extrato.svg" alt="">
+              <span>Extrato</span>
+            </li>
+
+          </ul>
+        </li>
+
+        <!-- EXTRATO -->
+        <li class="dropdown">
+
+          <div class="menu-title">
+            <div class="menu-left">
+              <img class="menu-icon" src="assets/icon-extrato.svg" alt="">
+              <span>Extrato</span>
+            </div>
+
+            <img class="arrow-icon" src="assets/vector.svg" alt="">
+          </div>
+
+          <ul class="submenu">
+
+            <li>
+              <img class="submenu-icon" src="assets/icon-aluno.svg" alt="">
+              <span>Aluno</span>
+            </li>
+
+            <li>
+              <img class="submenu-icon" src="assets/icon-instrutor.svg" alt="">
+              <span>Instrutor</span>
+            </li>
+
+          </ul>
+        </li>
+
+        <!-- SAIR -->
+        <li class="menu-item logout">
+          <img class="menu-icon" src="assets/icon-sair.svg" alt="">
+          <span>Sair</span>
+        </li>
+
+      </ul>
+    </nav>
+
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <header class="topbar">
+      <div></div>
+      <div class="user">João Silva</div>
+    </header>
+
+    <section class="banner">
+      <h2>Olá, João!</h2>
+      <p>Instrutor de Voo</p>
+    </section>
+
+    <section class="cards">
+
+      <div class="card"><div class="icon"></div><span>Treinamentos</span></div>
+      <div class="card"><div class="icon"></div><span>Voos</span></div>
+      <div class="card"><div class="icon"></div><span>Documentos</span></div>
+      <div class="card"><div class="icon"></div><span>Financeiro</span></div>
+      <div class="card"><div class="icon"></div><span>Extrato</span></div>
+      <div class="card logout"><div class="icon"></div><span>Sair</span></div>
+
+    </section>
+
+    <section class="stats">
+      <div class="stat">
+        <span>Voos Este Mês</span>
+        <strong>12</strong>
+      </div>
+
+      <div class="stat">
+        <span>Horas de Voo</span>
+        <strong>48.5</strong>
+      </div>
+
+      <div class="stat">
+        <span>Alunos Ativos</span>
+        <strong>8</strong>
+      </div>
+    </section>
+
+    <section class="flight">
+      <div class="flight-img"></div>
+
+      <div class="flight-info">
+        <strong>Próximo Voo Agendado</strong>
+        <p>Sexta-feira, 18 de Abril de 2026</p>
+        <p>Cessna 172 - PT-ABC</p>
+      </div>
+    </section>
+
+  </main>
 </div>
 
 <script src="js/menu.js"></script>
-<script src="js/script.js"></script>
-
 </body>
 </html>

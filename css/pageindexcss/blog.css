@@ -1,4 +1,3 @@
-/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -9,6 +8,7 @@
 body {
   background: #f5f5f5;
 }
+
 
 .header {
   display: grid;
@@ -53,7 +53,7 @@ body {
   text-decoration: none;
   color: #222;
   font-weight: 500;
-  padding: 10px 10px;
+  padding: 10px;
   display: inline-flex;
   align-items: center;
 }
@@ -67,39 +67,31 @@ body {
   border: 1px solid #244c73;
   border-radius: 3px;
   padding: 4px 12px;
-  display: inline-flex;
-  align-items: center;
   transition: 0.3s;
 }
 
 .header a.login-btn:hover {
   background: #244c73;
-  border-color: #244c73;
   color: white !important;
 }
-
-/* HERO (ORIGINAL) */
 
 .hero {
   height: 50vh;
   width: 100%;
-  background: url('../../assets/aeronaves.webp') center/cover no-repeat;
+  background: url('../../assets/imgblog.jpg') center/cover no-repeat;
   position: relative; 
 }
 
 .hero h1 {
   position: absolute;
-  left: 50%;     
-  transform: translateX(-50%); 
-  bottom: 20px;         
-
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20px;
   color: #244c73;
   font-size: 23px;
-
   background: rgba(255,255,255,0.7);
   padding: 20px;
   max-width: 670px;
-
   opacity: 0;
   animation: aparecer 1.2s ease forwards;
 }
@@ -109,80 +101,64 @@ body {
   to { opacity: 1; }
 }
 
-.frota {
+
+.blog {
   padding: 60px 80px;
 }
 
-.titulo {
+.blog-titulo {
   text-align: center;
-  font-size: 40px;
+  font-size: 38px;
   color: #244c73;
   margin-bottom: 50px;
 }
 
-.aviao {
-  display: flex;
-  gap: 40px;
-  margin-bottom: 60px;
-  align-items: center;
-  background: white;
-  padding: 20px;
+.blog-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+
+.post {
+  background: #fff;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.12);
   transition: 0.3s;
 }
 
-.aviao:hover {
-  transform: translateY(-5px);
+.post:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.18);
 }
 
-.aviao img {
-  width: 520px;
-  height: 346px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.info {
-  max-width: 600px;
-}
-
-.info h2 {
-  font-size: 28px;
+.post h2 {
+  font-size: 22px;
   color: #244c73;
-  margin-bottom: 10px;
+  padding: 20px 20px 10px 20px;
 }
 
-.info p {
-  font-size: 16px;
-  margin-bottom: 6px;
+.post img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
 }
 
-.descricao {
-  margin: 15px 0;
-  color: #444;
-  line-height: 1.6;
-}
-
-.info ul {
-  margin-top: 10px;
-  padding-left: 20px;
-}
-
-.info li {
-  margin-bottom: 5px;
+.post p {
   font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+  padding: 0 20px 20px 20px;
+  text-align: justify;
 }
+
 
 .linha-mapa {
   width: 100%;
   height: 6px;
   background: #5fa8d3;
-}
-
-.mapa {
-  width: 100%;
-  margin: 0;
 }
 
 .mapa iframe {
@@ -202,17 +178,11 @@ body {
 .footer-container {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
   gap: 40px;
 }
 
 .footer-logo img {
   width: 450px;
-}
-
-.footer-contato,
-.footer-atendimento {
-  max-width: 300px;
 }
 
 .footer h1 {
@@ -224,8 +194,6 @@ body {
 .footer p {
   font-size: 18px;
   margin-bottom: 8px;
-  line-height: 1.4;
-  color: #222;
 }
 
 .footer a {
@@ -246,7 +214,6 @@ body {
     #ffffff 100%
   );
   padding: 20px 80px;
-  border-top: 1px solid #eee;
 }
 
 .copyright-container {
@@ -263,18 +230,42 @@ body {
   flex: 1;
   text-align: center;
   font-size: 13px;
-  color: #222;
 }
 
-/* RESPONSIVO */
 
 @media (max-width: 900px) {
-  .aviao {
-    flex-direction: column;
+  .header {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 15px;
   }
 
-  .aviao img {
-    width: 100%;
-    height: auto;
+  .nav-left,
+  .nav-right {
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 18px;
+  }
+
+  .blog {
+    padding: 40px 20px;
+  }
+
+  .blog-lista {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    padding: 30px 20px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-logo img {
+    width: 250px;
   }
 }

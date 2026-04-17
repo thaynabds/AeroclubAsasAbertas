@@ -1,9 +1,12 @@
-function toggleMenu(id) {
-    const menu = document.getElementById(id);
+document.querySelectorAll('.menu-title').forEach(title => {
+  title.addEventListener('click', function () {
+    const parent = this.parentElement;
 
-    if (menu.style.display === "block") {
-        menu.style.display = "none";
-    } else {
-        menu.style.display = "block";
-    }
-}
+    document.querySelectorAll('.dropdown').forEach(item => {
+      if (item !== parent) item.classList.remove('active');
+    });
+
+    parent.classList.toggle('active');
+  });
+});
+
