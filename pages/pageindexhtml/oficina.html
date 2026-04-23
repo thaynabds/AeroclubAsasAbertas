@@ -2,8 +2,8 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Aeroclube</title>
-  <link rel="stylesheet" href="../../css/pageindexcss/nossafrota.css">
+  <title>Sobre Nós - Asas Abertas</title>
+  <link rel="stylesheet" href="../../css/pageindexcss/oficina.css">
   <link rel="icon" type="image/x-icon" href="../../assets/fav32x32.png">
 </head>
 
@@ -17,7 +17,7 @@
     <a href="../../index.html">Home</a>
     <a href="sobrenos.html">Sobre nós</a>
     <a href="nossafrota.html">Nossa Frota</a>
-    <a href="#">Oficina</a>
+    <a href="oficina.html">Oficina</a>
   </div>
 
   <div class="logo">
@@ -36,16 +36,128 @@
 </header>
 
 <section class="hero">
-  <h1>DESDE 2026 FORMANDO PROFISSIONAIS DA AVIAÇÃO</h1>
+  <h1>OFICINA</h1>
 </section>
 
 <!-- ================= END HEADER ================= -->
 
 <!-- ================= MAIN ================= -->
 
+<main class="container">
+  <section class="content">
+    <div class="header-section">
+      <h1>Oficina do Aeroclube de Pernambuco – CHE 9711-01/DAC</h1>
+      <p class="intro-text">Serviços especializados em manutenção e revitalização de aeronaves leves.</p>
+      
+      <p>Realizamos reforma completa de aeronaves, incluindo substituição de revestimento (entelamento), pintura geral e atualização da documentação aeronáutica para regularização do Certificado de Aeronavegabilidade.</p>
+      
+      <p>Elaboração de Relatório de Condição da Aeronave (RCA), juntamente com checklist técnico específico para os modelos atendidos pela oficina.</p>
+      
+      <p>Execução de inspeções periódicas e manutenções programadas, como revisões de 50h, 100h, 500h, 1.000h e Inspeção Anual de Manutenção (IAM), em diversas categorias de aeronaves homologadas.</p>
+      
+      <p class="subtitle"><strong>Modelos de aeronaves atendidas:</strong></p>
+    </div>
 
+    <!-- AERO BOEIRO -->
+    <div class="manufacturer-section">
+      <h3 class="manufacturer-title">AERO BOEIRO:</h3>
+      <div class="models-grid">
+        <div class="model-box">• AB-115</div>
+        <div class="model-box">• AB-180</div>
+      </div>
+    </div>
+
+    <!-- AZTEC -->
+    <div class="manufacturer-section">
+      <h3 class="manufacturer-title">AZTEC:</h3>
+      <div class="models-grid">
+        <div class="model-box">CTA – CENTRO TÉCNICO AEROESPACIAL:</div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="manufacturer-section">
+      <h3 class="manufacturer-title">CTA – CENTRO TÉCNICO AEROESPACIAL:</h3>
+      <div class="models-grid">
+        <div class="model-box">• CAP-4</div>
+        <div class="model-box">• KW-1</div>
+        <div class="model-box">• IPE-02B</div>
+      </div>
+    </div>
+
+    <!-- EMPRESA BRASILEIRA DE AERONÁUTICA -->
+    <div class="manufacturer-section">
+      <h3 class="manufacturer-title">EMPRESA BRASILEIRA DE AERONÁUTICA:</h3>
+      <div class="models-grid">
+        <div class="model-box">• EMB-810C</div>
+        <div class="model-box">• EMB-810D</div>
+      </div>
+    </div>
+
+    <!-- FAIRCHILD HILLER CORPORATION -->
+    <div class="manufacturer-section">
+      <h3 class="manufacturer-title">FAIRCHILD HILLER CORPORATION:</h3>
+      <div class="models-grid">
+        <div class="model-box">• PT-19</div>
+      </div>
+    </div>
+
+    <!-- INDUSTRIA AERONÁUTICA NEIVA LTDA -->
+    <div class="manufacturer-section">
+      <h3 class="manufacturer-title">INDUSTRIA AERONÁUTICA NEIVA LTDA:</h3>
+      <div class="models-table">
+        <div class="models-column">
+          <div class="model-box">• S6 • SC-C • EMB-7T1A<br>• EMB77T1ST</div>
+        </div>
+        <div class="models-column">
+          <div class="model-box">• S6-B • S6-C-1 • EMB 7T1C • EMB-7I2</div>
+        </div>
+        <div class="models-column">
+          <div class="model-box">• S6-B-1 • EMB-7IOC • EMB 7TTT • EMB-810D</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PIPER AIRCRAFT, Inc. -->
+    <div class="manufacturer-section">
+      <h3 class="manufacturer-title">PIPER AIRCRAFT, Inc. THE NEW:</h3>
+      <div class="models-table">
+        <div class="models-column">
+          <div class="model-box">• CE-II • PA-18-150 • PA-28-150 • PA-28R-180 • PA-28R-200T</div>
+        </div>
+        <div class="models-column">
+          <div class="model-box">• PA-18 • PA-28-150 • PA-28-150 • PA-28R-200</div>
+        </div>
+        <div class="models-column">
+          <div class="model-box">• PA-18A • PA-28-150 • PA-28-235 • PA-28RT-201</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARROSSEL DE IMAGENS -->
+    <div class="carousel-section">
+      <div class="carousel-container">
+        <button class="carousel-btn prev-btn" onclick="prevImage()">❮</button>
+        
+        <div class="carousel-wrapper">
+          <img class="carousel-img active" src="../../assets/hangar.png" alt="Hangar da Oficina do Aeroclube de Pernambuco">
+          <img class="carousel-img" src="../../assets/hangar2.png" alt="Oficina - Oficina do Aeroclube">
+        </div>
+        
+        <button class="carousel-btn next-btn" onclick="nextImage()">❯</button>
+      </div>
+      
+      <div class="carousel-indicators">
+        <span class="indicator active" onclick="goToImage(0)"></span>
+        <span class="indicator" onclick="goToImage(1)"></span>
+      </div>
+    </div>
+  </section>
+</main>
 
 <!-- ================= END MAIN ================= -->
+
+<script src="../../js/script.js"></script>
 
 
 <!-- ================= FOOTER ================= -->
@@ -92,7 +204,7 @@
     </div>
 
     <div class="copyright-texto">
-      © 2026 Squad-35. Projeto desenvolvido para fins educacionais.
+      © 2026 Squad-43. Projeto desenvolvido para fins educacionais.
     </div>
 
   </div>

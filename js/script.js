@@ -58,3 +58,35 @@ function toggleSenha() {
 function logout() {
     window.location.href = "index.html";
 }
+
+
+
+
+let currentImageIndex = 0;
+const images = document.querySelectorAll('.carousel-img');
+const indicators = document.querySelectorAll('.indicator');
+
+function showImage(index) {
+  // Remove active de todas as imagens e indicadores
+  images.forEach(img => img.classList.remove('active'));
+  indicators.forEach(ind => ind.classList.remove('active'));
+
+  // Adiciona active à imagem e indicador atual
+  images[index].classList.add('active');
+  indicators[index].classList.add('active');
+  currentImageIndex = index;
+}
+
+function nextImage() {
+  let nextIndex = (currentImageIndex + 1) % images.length;
+  showImage(nextIndex);
+}
+
+function prevImage() {
+  let prevIndex = (currentImageIndex - 1 + images.length) % images.length;
+  showImage(prevIndex);
+}
+
+function goToImage(index) {
+  showImage(index);
+}

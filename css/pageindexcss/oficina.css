@@ -48,6 +48,218 @@ body {
   color: #244c73;
 }
 
+/* ================= MAIN CONTENT ================= */
+
+.container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.content {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-section {
+  margin-bottom: 30px;
+}
+
+.header-section h1 {
+  font-size: 18px;
+  color: #244c73;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.header-section p {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 12px;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.header-section p.intro-text {
+  font-size: 15px;
+  color: #244c73;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.header-section p.subtitle {
+  margin-top: 20px;
+  margin-bottom: 15px;
+  color: #244c73;
+}
+
+.bullet-list {
+  margin-left: 20px;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.bullet-list li {
+  margin-bottom: 8px;
+}
+
+/* Manufacturer Sections */
+
+.manufacturer-section {
+  margin-bottom: 25px;
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.manufacturer-title {
+  background-color: #f0f0f0;
+  padding: 12px 15px;
+  font-size: 13px;
+  font-weight: bold;
+  color: #244c73;
+  margin: 0;
+  text-transform: uppercase;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+.models-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0;
+  padding: 0;
+}
+
+.model-box {
+  padding: 15px;
+  border-right: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 13px;
+  color: #333;
+  line-height: 1.4;
+}
+
+.model-box:last-child {
+  border-right: none;
+}
+
+/* For larger model lists */
+
+.models-table {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.models-column {
+  border-right: 1px solid #e0e0e0;
+}
+
+.models-column:last-child {
+  border-right: none;
+}
+
+.models-column .model-box {
+  border-right: none;
+  border-bottom: none;
+  padding: 15px;
+  font-size: 13px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Carousel Section */
+
+.carousel-section {
+  margin-top: 40px;
+  padding: 20px;
+  border: 2px solid #244c73;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  overflow: hidden;
+}
+
+.carousel-wrapper {
+  flex: 1;
+  position: relative;
+  width: 100%;
+  height: 400px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.carousel-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-img.active {
+  opacity: 1;
+}
+
+.carousel-btn {
+  background-color: #244c73;
+  color: white;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  flex-shrink: 0;
+}
+
+.carousel-btn:hover {
+  background-color: #1a3651;
+  transform: scale(1.1);
+}
+
+.carousel-btn:active {
+  transform: scale(0.95);
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.indicator.active {
+  background-color: #244c73;
+}
+
+.indicator:hover {
+  background-color: #a0a0a0;
+}
+
 .header a {
   text-decoration: none;
   color: #222;

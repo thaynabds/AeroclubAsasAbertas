@@ -6,7 +6,7 @@
 
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/menu.css">
-
+<link rel="stylesheet" href="css/pagesdashboard/agenda.css">
 <link rel="icon" type="image/x-icon" href="assets/fav32x32.png">
 </head>
 
@@ -19,7 +19,7 @@
 
     <!-- LOGO -->
     <div class="logo">
-      <img src="assets/logosemfundo.png" alt="Aeroclub Logo">
+      <img src="../../assets/logosemfundo.png" alt="Aeroclub Logo">
     </div>
 
     <div class="user-info">
@@ -207,12 +207,12 @@
           <ul class="submenu">
 
             <li>
-              <img class="submenu-icon" src="assets/icon-aluno.svg" alt="">
+              <img class="submenu-icon" src="assets/icon-instrutoraluno.svg" alt="">
               <span>Aluno</span>
             </li>
 
             <li>
-              <img class="submenu-icon" src="assets/icon-instrutor.svg" alt="">
+              <img class="submenu-icon" src="assets/icon-instrutoraluno.svg" alt="">
               <span>Instrutor</span>
             </li>
 
@@ -220,7 +220,7 @@
         </li>
 
         <!-- SAIR -->
-        <li class="menu-item logout">
+        <li class="menu-item logout" id="logoutMenu">
           <img class="menu-icon" src="assets/icon-sair.svg" alt="">
           <span>Sair</span>
         </li>
@@ -233,24 +233,57 @@
   <!-- MAIN -->
   <main class="main">
 
-    <header class="topbar">
-      <div></div>
-      <div class="user">João Silva</div>
-    </header>
-
     <section class="banner">
       <h2>Olá, João!</h2>
       <p>Instrutor de Voo</p>
     </section>
 
+    <!-- AREA DINAMICA -->
+    <div id="conteudo">
+
     <section class="cards">
 
-      <div class="card"><div class="icon"></div><span>Treinamentos</span></div>
-      <div class="card"><div class="icon"></div><span>Voos</span></div>
-      <div class="card"><div class="icon"></div><span>Documentos</span></div>
-      <div class="card"><div class="icon"></div><span>Financeiro</span></div>
-      <div class="card"><div class="icon"></div><span>Extrato</span></div>
-      <div class="card logout"><div class="icon"></div><span>Sair</span></div>
+      <div class="card">
+        <div class="icon">
+          <img src="assets/icon-treinamento1.svg" alt="">
+        </div>
+        <span>Treinamentos</span>
+      </div>
+
+      <div class="card">
+        <div class="icon">
+          <img src="assets/icon-voos1.svg" alt="">
+        </div>
+        <span>Voos</span>
+      </div>
+
+      <div class="card">
+        <div class="icon">
+          <img src="assets/icon-documentos1.svg" alt="">
+        </div>
+        <span>Documentos</span>
+      </div>
+
+      <div class="card">
+        <div class="icon">
+          <img src="assets/icon-financeiro1.svg" alt="">
+        </div>
+        <span>Financeiro</span>
+      </div>
+
+      <div class="card">
+        <div class="icon">
+          <img src="assets/icon-extrato1.svg" alt="">
+        </div>
+        <span>Extrato</span>
+      </div>
+
+      <div class="card logout" id="logoutCard">
+        <div class="icon">
+          <img src="assets/icon-sair1.svg" alt="">
+        </div>
+        <span>Sair</span>
+      </div>
 
     </section>
 
@@ -281,9 +314,12 @@
       </div>
     </section>
 
+    </div>
+
   </main>
+
 </div>
 
-<script src="js/menu.js"></script>
+<script src="js/menu.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,51 @@
+<div class="agenda-container">
+
+    <div class="agenda-header">
+        <h2>Agendar Aula Teórica</h2>
+        <p>Verifique a disponibilidade de horários para agendamento</p>
+    </div>
+
+    <div class="agenda-card">
+
+        <div class="agenda-title">
+            <img src="../../assets/icon-Acalendario.svg" class="agenda-icon">
+            <h3>Informações do Agendamento</h3>
+        </div>
+
+        <div class="form-group">
+            <label>Data do Agendamento *</label>
+            <input type="date" id="dataAgendamento">
+            <small>Formato: DD/MM/AAAA</small>
+        </div>
+
+        <div class="form-group">
+            <label>Horário Desejado (opcional)</label>
+            <input type="time" id="horaAgendamento">
+            <small>Se vazio, mostrará todos os horários disponíveis</small>
+        </div>
+
+        <div class="form-group">
+            <label>Tipo de Serviço *</label>
+            <select id="tipoServico">
+                <option value="">Selecione...</option>
+                <option>Aula Teórica</option>
+                <option>Aula Prática</option>
+                <option>Treinamento</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Instrutor / Aeronave (opcional)</label>
+            <input type="text" id="instrutor">
+        </div>
+
+        <button class="btn-verificar" onclick="verificarAgenda()">
+            <img src="../../assets/icon-lupa.svg" class="icon-btn">
+            Verificar Disponibilidade
+        </button>
+
+        <div id="resultadoAgenda"></div>
+
+    </div>
+
+</div>

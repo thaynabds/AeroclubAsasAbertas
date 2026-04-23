@@ -1,0 +1,115 @@
+.agenda-container {
+  padding: 40px;
+  background: #f5f6fa;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.agenda-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.agenda-header {
+  width: 100%;
+  max-width: 750px;
+  margin-bottom: 10px;
+}
+
+.agenda-header h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.agenda-header p {
+  color: #6b7280;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.agenda-card {
+  background: white;
+  border-radius: 10px;
+  padding: 25px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 750px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.agenda-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.agenda-title h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
+
+.form-group small {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.btn-verificar {
+  width: 100%;
+  padding: 12px;
+  background: #6c7ae0;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn-verificar:hover {
+  background: #5b68c5;
+}
+
+#resultadoAgenda {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.btn-verificar {
+  width: 100%;
+  padding: 12px;
+  background: #6c7ae0;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
