@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alojamento - Asas Abertas</title>
   <link rel="stylesheet" href="../../css/pageindexcss/alojamento.css">
   <link rel="icon" type="image/x-icon" href="../../assets/fav32x32.png">
@@ -10,14 +11,13 @@
 <body>
 
 <!-- ================= HEADER ================= -->
-
 <header class="header">
 
   <div class="nav-left">
     <a href="../../index.html">Home</a>
     <a href="sobrenos.html">Sobre nós</a>
     <a href="nossafrota.html">Nossa Frota</a>
-    <a href="#">Oficina</a>
+    <a href="oficina.html">Oficina</a>
   </div>
 
   <div class="logo">
@@ -33,32 +33,46 @@
     <a href="../../login.html" class="login-btn">Login</a>
   </div>
 
+  <!-- Botão hamburger (visível só no mobile) -->
+  <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Menu mobile -->
+  <nav class="mobile-menu" id="mobile-menu">
+    <a href="../../index.html">Home</a>
+    <a href="sobrenos.html">Sobre nós</a>
+    <a href="nossafrota.html">Nossa Frota</a>
+    <a href="oficina.html">Oficina</a>
+    <a href="alojamento.html">Alojamento</a>
+    <a href="blog.html">Blog</a>
+    <a href="voopanoramico.html">Voo panorâmico</a>
+    <a href="cursos.html">Cursos</a>
+    <a href="../../login.html" class="login-btn">Login</a>
+  </nav>
+
 </header>
 
 <section class="hero">
   <h1>ALOJAMENTO</h1>
 </section>
-
 <!-- ================= END HEADER ================= -->
 
 <!-- ================= MAIN ================= -->
-
 <main class="alojamento">
 
   <section class="alojamento-hero">
-
     <h1>Alojamento para Alunos</h1>
-
     <p>
       O Aeroclube Asas Abertas dispõe de alojamento do tipo dormitório, destinado exclusivamente aos alunos
       matriculados nos cursos de Piloto Privado e Piloto Comercial, durante a fase teórica ou prática da formação.
     </p>
-
     <p>
       Caso o aluno esteja na fase prática do curso, o alojamento pode ser utilizado conforme disponibilidade e
       critérios internos da instituição, garantindo conforto, segurança e praticidade durante o período de instrução.
     </p>
-
   </section>
 
   <section class="alojamento-container">
@@ -66,7 +80,6 @@
     <!-- Masculino -->
     <div class="card-alojamento">
       <img src="../../assets/aloj1.png" alt="Alojamento Masculino">
-
       <div class="info-alojamento">
         <h2>Alojamento Masculino</h2>
         <p>
@@ -79,7 +92,6 @@
     <!-- Feminino -->
     <div class="card-alojamento">
       <img src="../../assets/aloj2.jpg" alt="Alojamento Feminino">
-
       <div class="info-alojamento">
         <h2>Alojamento Feminino</h2>
         <p>
@@ -92,11 +104,9 @@
   </section>
 
 </main>
-
 <!-- ================= END MAIN ================= -->
 
 <!-- ================= FOOTER ================= -->
-
 <div class="linha-mapa"></div>
 
 <section class="mapa">
@@ -106,7 +116,6 @@
 <div class="linha-mapa"></div>
 
 <footer class="footer">
-
   <div class="footer-container">
 
     <div class="footer-logo">
@@ -128,11 +137,9 @@
     </div>
 
   </div>
-
 </footer>
 
 <div class="copyright">
-
   <div class="copyright-container">
 
     <div class="copyright-logo">
@@ -144,10 +151,25 @@
     </div>
 
   </div>
-
 </div>
-
 <!-- ================= END FOOTER ================= -->
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    });
+  });
+</script>
 
 </body>
 </html>

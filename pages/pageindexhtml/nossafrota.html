@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nossa Frota - Asas Abertas</title>
   <link rel="stylesheet" href="../../css/pageindexcss/nossafrota.css">
   <link rel="icon" type="image/x-icon" href="../../assets/fav32x32.png">
@@ -11,14 +12,13 @@
 <body>
 
   <!-- ================= HEADER ================= -->
-
   <header class="header">
 
     <div class="nav-left">
       <a href="../../index.html">Home</a>
       <a href="sobrenos.html">Sobre nós</a>
       <a href="#">Nossa Frota</a>
-      <a href="#">Oficina</a>
+      <a href="oficina.html">Oficina</a>
     </div>
 
     <div class="logo">
@@ -34,32 +34,47 @@
       <a href="../../login.html" class="login-btn">Login</a>
     </div>
 
+    <!-- Botão hamburger (visível só no mobile) -->
+    <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Menu mobile -->
+    <nav class="mobile-menu" id="mobile-menu">
+      <a href="../../index.html">Home</a>
+      <a href="sobrenos.html">Sobre nós</a>
+      <a href="#">Nossa Frota</a>
+      <a href="oficina.html">Oficina</a>
+      <a href="alojamento.html">Alojamento</a>
+      <a href="blog.html">Blog</a>
+      <a href="voopanoramico.html">Voo panorâmico</a>
+      <a href="cursos.html">Cursos</a>
+      <a href="../../login.html" class="login-btn">Login</a>
+    </nav>
+
   </header>
 
   <section class="hero">
     <h1>NOSSA FROTA</h1>
   </section>
-
   <!-- ================= END HEADER ================= -->
 
   <!-- ================= MAIN ================= -->
-
   <main class="frota">
 
     <!-- Aero Boero -->
     <div class="aviao">
       <img src="../../assets/boero.jpg" alt="Aero Boero">
-
       <div class="info">
         <h2>Aero Boero AB-115</h2>
         <p><strong>Matrícula:</strong> PR-ABC</p>
         <p><strong>Quantidade:</strong> 11 aeronaves</p>
-
         <p class="descricao">
           Aeronave amplamente utilizada em aeroclubes para treinamento básico.
           Possui asa alta, excelente estabilidade e baixo custo operacional.
         </p>
-
         <ul>
           <li><strong>Operação:</strong> VFR diurno</li>
           <li><strong>Motor:</strong> Lycoming O-235</li>
@@ -72,17 +87,14 @@
     <!-- Cessna 152 -->
     <div class="aviao">
       <img src="../../assets/cessna152.jpg" alt="Cessna 152">
-
       <div class="info">
         <h2>Cessna 152</h2>
         <p><strong>Matrícula:</strong> PR-JSS</p>
         <p><strong>Quantidade:</strong> 4 aeronaves</p>
-
         <p class="descricao">
           Um dos aviões de treinamento mais populares do mundo.
           Econômico, confiável e ideal para pilotos iniciantes.
         </p>
-
         <ul>
           <li><strong>Operação:</strong> VFR noturno</li>
           <li><strong>Motor:</strong> Lycoming O-235</li>
@@ -95,17 +107,14 @@
     <!-- Cessna 172 -->
     <div class="aviao">
       <img src="../../assets/cessna172.jpeg" alt="Cessna 172">
-
       <div class="info">
         <h2>Cessna 172</h2>
         <p><strong>Matrícula:</strong> PT-XYZ</p>
         <p><strong>Quantidade:</strong> 3 aeronaves</p>
-
         <p class="descricao">
           Muito comum em aeroclubes brasileiros, usado para treinamento avançado
           e voos mais longos com maior conforto.
         </p>
-
         <ul>
           <li><strong>Operação:</strong> VFR/IFR</li>
           <li><strong>Motor:</strong> Lycoming 160HP</li>
@@ -118,17 +127,14 @@
     <!-- Cherokee -->
     <div class="aviao">
       <img src="../../assets/pa28.jpg" alt="Cherokee">
-
       <div class="info">
         <h2>Piper PA-28 Cherokee</h2>
         <p><strong>Matrícula:</strong> PT-IYQ</p>
         <p><strong>Quantidade:</strong> 2 aeronaves</p>
-
         <p class="descricao">
           Avião de asa baixa bastante utilizado para formação e viagens curtas,
           com boa estabilidade e desempenho.
         </p>
-
         <ul>
           <li><strong>Operação:</strong> VFR noturno</li>
           <li><strong>Motor:</strong> Lycoming 150HP</li>
@@ -138,22 +144,18 @@
       </div>
     </div>
 
-    <!-- Seneca -->
     <!-- Paulistinha -->
     <div class="aviao">
       <img src="../../assets/paulistinha.jpg" alt="Paulistinha">
-
       <div class="info">
         <h2>Paulistinha CAP-4</h2>
         <p><strong>Matrícula:</strong> PP-HIY</p>
         <p><strong>Quantidade:</strong> 1 aeronave</p>
-
         <p class="descricao">
           O Paulistinha CAP-4 é uma aeronave clássica da aviação brasileira,
           amplamente utilizada na formação de pilotos. Possui asa alta e
           excelente estabilidade, sendo ideal para treinamento básico.
         </p>
-
         <ul>
           <li><strong>Operação:</strong> VFR diurno</li>
           <li><strong>Motor:</strong> Continental C85 (85HP)</li>
@@ -164,11 +166,9 @@
     </div>
 
   </main>
-
   <!-- ================= END MAIN ================= -->
 
   <!-- ================= FOOTER ================= -->
-
   <div class="linha-mapa"></div>
 
   <section class="mapa">
@@ -178,7 +178,6 @@
   <div class="linha-mapa"></div>
 
   <footer class="footer">
-
     <div class="footer-container">
 
       <div class="footer-logo">
@@ -200,11 +199,9 @@
       </div>
 
     </div>
-
   </footer>
 
   <div class="copyright">
-
     <div class="copyright-container">
 
       <div class="copyright-logo">
@@ -216,11 +213,25 @@
       </div>
 
     </div>
-
   </div>
-
   <!-- ================= END FOOTER ================= -->
 
-</body>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
 
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+      });
+    });
+  </script>
+
+</body>
 </html>

@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sobre Nós - Asas Abertas</title>
   <link rel="stylesheet" href="../../css/pageindexcss/oficina.css">
   <link rel="icon" type="image/x-icon" href="../../assets/fav32x32.png">
@@ -10,7 +11,6 @@
 <body>
 
 <!-- ================= HEADER ================= -->
-
 <header class="header">
 
   <div class="nav-left">
@@ -33,16 +33,34 @@
     <a href="../../login.html" class="login-btn">Login</a>
   </div>
 
+  <!-- Botão hamburger (visível só no mobile) -->
+  <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Menu mobile -->
+  <nav class="mobile-menu" id="mobile-menu">
+    <a href="../../index.html">Home</a>
+    <a href="sobrenos.html">Sobre nós</a>
+    <a href="nossafrota.html">Nossa Frota</a>
+    <a href="oficina.html">Oficina</a>
+    <a href="alojamento.html">Alojamento</a>
+    <a href="blog.html">Blog</a>
+    <a href="voopanoramico.html">Voo panorâmico</a>
+    <a href="cursos.html">Cursos</a>
+    <a href="../../login.html" class="login-btn">Login</a>
+  </nav>
+
 </header>
 
 <section class="hero">
   <h1>OFICINA</h1>
 </section>
-
 <!-- ================= END HEADER ================= -->
 
 <!-- ================= MAIN ================= -->
-
 <main class="container">
   <section class="content">
     <div class="header-section">
@@ -154,11 +172,26 @@
     </div>
   </section>
 </main>
-
 <!-- ================= END MAIN ================= -->
 
 <script src="../../js/script.js"></script>
 
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    });
+  });
+</script>
 
 <!-- ================= FOOTER ================= -->
 <div class="linha-mapa"></div>
@@ -170,7 +203,6 @@
 <div class="linha-mapa"></div>
 
 <footer class="footer">
-
   <div class="footer-container">
 
     <div class="footer-logo">
@@ -192,11 +224,9 @@
     </div>
 
   </div>
-
 </footer>
 
 <div class="copyright">
-
   <div class="copyright-container">
 
     <div class="copyright-logo">
@@ -208,9 +238,7 @@
     </div>
 
   </div>
-
 </div>
-
 <!-- ================= END FOOTER ================= -->
 
 </body>

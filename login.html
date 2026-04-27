@@ -1,41 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<title>Asas Aberta</title>
-<link rel="stylesheet" href="css/login.css">
-<link rel="icon" type="image/x-icon" href="assets/fav32x32.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asas Abertas</title>
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="icon" type="image/x-icon" href="assets/fav32x32.png">
 </head>
 
 <body>
 
 <div class="container">
 
-    <div class="left">
-        <img src="assets/piloto.jpg" alt="Piloto">
+  <div class="left">
+    <img src="assets/piloto.jpg" alt="Piloto">
+  </div>
+
+  <div class="right">
+
+    <img src="assets/logo.svg" class="logo" alt="Logo">
+
+    <input type="email" id="email" placeholder="E-mail">
+
+    <div class="senha-box">
+      <input type="password" id="senha" placeholder="Senha">
+      <img src="assets/visibility_off.png"
+           class="eye"
+           onclick="toggleSenha()"
+           alt="Mostrar senha">
     </div>
 
-    <div class="right">
-
-        <img src="assets/logo.svg" class="logo" alt="Logo">
-
-        <input type="email" id="email" placeholder="E-mail">
-
-        <div class="senha-box">
-            <input type="password" id="senha" placeholder="Senha">
-            <img src="assets/visibility_off.png"
-                 class="eye"
-                 onclick="toggleSenha()"
-                 alt="Mostrar senha">
-        </div>
-
-        <div class="lembrar">
-            <input type="checkbox" id="lembrar">
-            <label for="lembrar">Lembre-me</label>
-        </div>
-
-        <button onclick="login()">Entrar</button>
+    <div class="lembrar">
+      <input type="checkbox" id="lembrar">
+      <label for="lembrar">Lembre-me</label>
     </div>
+
+    <button onclick="login()">Entrar</button>
+
+  </div>
 
 </div>
 

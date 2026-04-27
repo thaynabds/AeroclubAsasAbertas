@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aeroclube - Asas Abertas</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/x-icon" href="assets/fav32x32.png">
@@ -30,6 +31,26 @@
     <a href="pages/pageindexhtml/cursos.html">Cursos</a>
     <a href="login.html" class="login-btn">Login</a>
   </div>
+
+  <!-- Botão hamburger (visível só no mobile) -->
+  <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Menu mobile -->
+  <nav class="mobile-menu" id="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="pages/pageindexhtml/sobrenos.html">Sobre nós</a>
+    <a href="pages/pageindexhtml/nossafrota.html">Nossa Frota</a>
+    <a href="pages/pageindexhtml/oficina.html">Oficina</a>
+    <a href="pages/pageindexhtml/Alojamento.html">Alojamento</a>
+    <a href="pages/pageindexhtml/blog.html">Blog</a>
+    <a href="pages/pageindexhtml/voopanoramico.html">Voo panorâmico</a>
+    <a href="pages/pageindexhtml/cursos.html">Cursos</a>
+    <a href="login.html" class="login-btn">Login</a>
+  </nav>
 
 </header>
 
@@ -172,6 +193,24 @@
   </div>
 
 </div>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+
+  // Fecha o menu ao clicar em qualquer link
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    });
+  });
+</script>
 
 </body>
 </html>
