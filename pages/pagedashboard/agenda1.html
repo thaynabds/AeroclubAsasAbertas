@@ -1,8 +1,8 @@
 <div class="agenda-container">
 
     <div class="agenda-header">
-        <h2>Agendar Aula</h2>
-        <p>Verifique a disponibilidade de horários para agendamento</p>
+        <h2>Agenda do Instrutor</h2>
+        <p>Gerencie aulas dos alunos e horários disponíveis</p>
     </div>
 
     <div class="agenda-card">
@@ -30,13 +30,15 @@
                 <option value="">Selecione...</option>
                 <option>Aula Teórica</option>
                 <option>Aula Prática</option>
-                <option>Alugel de aeronave</option>
+                <option>Aluguel de aeronave</option>
             </select>
         </div>
 
         <div class="form-group">
-            <label>Instrutor / Aeronave (opcional)</label>
-            <input type="text" id="instrutor">
+            <label>Selecionar Aluno *</label>
+            <select id="alunoSelecionado">
+                <option value="">Selecione o aluno...</option>
+            </select>
         </div>
 
         <button class="btn-verificar" onclick="verificarAgenda()">

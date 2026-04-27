@@ -26,11 +26,27 @@ function login() {
     const email = document.getElementById("email").value;
     const senha = document.getElementById("senha").value;
 
+    // 🔐 ADMIN (já existente)
     if (email === "dashboardgeneral" && senha === "*_aeroClube@") {
         window.location.href = "cadastro.html";
         return;
     }
 
+    // 👨‍🎓 ALUNO
+    if (email === "pedrinholira007@gmail.com" && senha === "123") {
+        localStorage.setItem("usuarioLogado", email);
+        window.location.href = "dashboard.html";
+        return;
+    }
+
+    // 👨‍✈️ INSTRUTOR
+    if (email === "vicentedepaula@gmail.com" && senha === "123") {
+        localStorage.setItem("usuarioLogado", email);
+        window.location.href = "dashinstrutor.html";
+        return;
+    }
+
+    // 🔎 USUÁRIOS CADASTRADOS NORMAL
     let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
     const usuarioEncontrado = usuarios.find(u =>
@@ -38,6 +54,7 @@ function login() {
     );
 
     if (usuarioEncontrado) {
+        localStorage.setItem("usuarioLogado", usuarioEncontrado.email);
         alert("Login realizado com sucesso!");
         window.location.href = "dashboard.html";
     } else {
