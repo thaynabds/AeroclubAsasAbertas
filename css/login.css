@@ -1,22 +1,23 @@
 body {
   margin: 0;
   font-family: Arial;
-  background-color: #20639F;
+  background-color: white;
   min-height: 100vh;
 }
 
 .container {
   display: flex;
-  width: 900px;
-  height: 480px;
-  margin: 100px auto;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
   background: white;
-  border-radius: 10px;
+  border-radius: 0;
   overflow: hidden;
 }
 
 .left {
   width: 50%;
+  height: 100%;
 }
 
 .left img {
@@ -27,6 +28,7 @@ body {
 
 .right {
   width: 50%;
+  height: 100%;
   padding: 30px;
   text-align: center;
   display: flex;
@@ -114,16 +116,16 @@ body {
   margin: 0;
 }
 
-/* ─── TABLET ─────────────────────────────────────────── */
+/* TABLET */
 @media (max-width: 960px) {
   .container {
-    width: 90%;
-    height: auto;
-    margin: 60px auto;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
   }
 }
 
-/* ─── MOBILE — esconde imagem, centraliza formulário ─── */
+/* MOBILE */
 @media (max-width: 600px) {
   body {
     background-color: white;
@@ -144,6 +146,7 @@ body {
 
   .right {
     width: 100%;
+    height: 100%;
     padding: 40px 24px;
     box-sizing: border-box;
   }

@@ -1,3 +1,29 @@
+function carregarNomeUsuario() {
+  const emailLogado = localStorage.getItem("usuarioLogado");
+  const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+  const usuario = usuarios.find(u => u.email === emailLogado);
+
+  if (!usuario) return;
+
+  const nomeCompleto = usuario.nomeCompleto || "Aluno";
+
+  const nomeUsuario = document.getElementById("nomeUsuario");
+  const saudacaoUsuario = document.getElementById("saudacaoUsuario");
+
+  if (nomeUsuario) {
+    nomeUsuario.innerText = nomeCompleto;
+  }
+
+  if (saudacaoUsuario) {
+    saudacaoUsuario.innerText = `Olá, ${usuario.nome}!`;
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  carregarNomeUsuario();
+});
+
 // AGUARDA CARREGAR A PÁGINA
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -41,6 +67,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const conteudo = document.getElementById('conteudo');
   const dashboard = conteudo.innerHTML;
 
+  atualizarDashboardAluno();
+
 
   // MENU CLIQUE
   document.querySelectorAll(".menu-item").forEach(item => {
@@ -70,6 +98,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // SUBMENU CLIQUE
   document.querySelectorAll(".submenu li").forEach(item => {
     item.addEventListener("click", () => {
+      const texto = item.querySelector("span")?.innerText.trim();
+
+      // DIÁRIO DO ALUNO
+      if (texto === "Diário do Aluno") {
+        abrirDiarioAluno();
+        return;
+      }
+
       carregarConstrucao();
     });
   });
@@ -267,7 +303,7 @@ function verificarAgenda() {
           </div>
 
           <div class="info">
-            Instrutor: João Silva <br>
+            Instrutor: Aleatório <br>
             ${aula.local}
           </div>
         `;
@@ -321,9 +357,9 @@ function verificarAgenda() {
 
     if (classe === "disponivel") {
       disponiveis++;
-      infoTexto = `Instrutor: João Silva <br>Disponível para agendamento`;
+      infoTexto = `Instrutor: Aleatório  <br>Disponível para agendamento`;
     } else if (tag) {
-      infoTexto = `Instrutor: João Silva <br>${local}`;
+      infoTexto = `Instrutor: Aleatório <br>${local}`;
     }
 
     const card = document.createElement("div");
@@ -340,11 +376,10 @@ function verificarAgenda() {
           <div class="acoes">
             <span class="tag-agendado">${tag}</span>
 
-            ${
-              aulaExistente?.statusCancelamento === "pendente"
-                ? `<button class="btn-cancelar" disabled>Solicitação enviada</button>`
-                : `<button class="btn-cancelar">Solicitar Cancelamento</button>`
-            }
+            ${aulaExistente?.statusCancelamento === "pendente"
+          ? `<button class="btn-cancelar" disabled>Solicitação enviada</button>`
+          : `<button class="btn-cancelar">Solicitar Cancelamento</button>`
+        }
           </div>
         ` : ""}
       </div>
@@ -373,7 +408,14 @@ function verificarAgenda() {
           tipo: tipoSelecionado,
           status: "Agendado",
           statusCancelamento: null,
-          situacaoFinal: null
+          situacaoFinal: null,
+
+          // aluno correto
+          aluno: localStorage.getItem("nomeCompletoUsuario") || "Aluno",
+
+          // instrutor correto
+          instrutor: "Instrutor"
+
         });
 
         agenda[data] = dados;
@@ -412,3 +454,119 @@ function verificarAgenda() {
 window.onload = () => {
   verificarAgenda();
 };
+
+// ===============================
+// DASHBOARD DO ALUNO AUTOMÁTICO
+// ===============================
+function atualizarDashboardAluno() {
+  let proximaAula = null;
+  let totalVoos = 12;
+
+  const hoje = new Date();
+  hoje.setHours(0, 0, 0, 0);
+
+  Object.keys(agenda)
+    .sort()
+    .forEach(data => {
+      const dados = agenda[data];
+      const dataAula = new Date(data + "T00:00:00");
+
+      dados.aulas.forEach(aula => {
+        if (
+          !proximaAula &&
+          aula.status === "Agendado" &&
+          dataAula >= hoje
+        ) {
+          proximaAula = {
+            data,
+            hora: aula.hora,
+            local: aula.local
+          };
+        }
+
+        if (aula.situacaoFinal === "Aula Concluída") {
+          totalVoos++;
+        }
+      });
+    });
+
+  // atualizar "Voos Este Mês"
+  const stats = document.querySelectorAll(".stat strong");
+
+  if (stats[0]) {
+    stats[0].innerText = totalVoos;
+  }
+
+  // atualizar card "Próximo Voo Agendado"
+  const flightInfo = document.querySelector(".flight-info");
+
+  if (!flightInfo) return;
+
+  if (proximaAula) {
+    flightInfo.innerHTML = `
+      <strong>Próximo Voo Agendado</strong>
+      <p>${formatarData(proximaAula.data)} às ${proximaAula.hora}</p>
+      <p>${proximaAula.local}</p>
+    `;
+  } else {
+    flightInfo.innerHTML = `
+      <strong>Próximo Voo Agendado</strong>
+      <p>Nenhuma aula marcada no momento</p>
+      <p>Aguardando novo agendamento</p>
+    `;
+  }
+}
+
+// ===============================
+// ATUALIZA AUTOMATICAMENTE
+// ===============================
+window.addEventListener("storage", () => {
+  atualizarDashboardAluno();
+});
+
+setInterval(() => {
+  atualizarDashboardAluno();
+}, 1000);
+
+function configurarCardsInicio() {
+  document.addEventListener("click", function (e) {
+    const card = e.target.closest(".cards .card");
+    if (!card) return;
+
+    const span = card.querySelector("span");
+    if (!span) return;
+
+    const texto = span.innerText.trim();
+
+    if (
+      texto === "Treinamentos" ||
+      texto === "Voos" ||
+      texto === "Documentos" ||
+      texto === "Financeiro" ||
+      texto === "Extrato"
+    ) {
+      carregarConstrucao();
+    }
+  });
+}
+
+// chama só uma vez
+document.addEventListener("DOMContentLoaded", configurarCardsInicio);
+
+// ===============================
+// ABRIR DIÁRIO DO ALUNO
+// ===============================
+function abrirDiarioAluno() {
+  fetch("pages/pagedashboard/diariodoaluno.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("conteudo").innerHTML = data;
+
+      if (typeof carregarDiarioAluno === "function") {
+        carregarDiarioAluno();
+      }
+    })
+    .catch(error => {
+      console.error("Erro ao carregar Diário do Aluno:", error);
+    });
+}

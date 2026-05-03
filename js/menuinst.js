@@ -1,3 +1,29 @@
+function carregarNomeUsuario() {
+    const emailLogado = localStorage.getItem("usuarioLogado");
+    const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+    const usuario = usuarios.find(u => u.email === emailLogado);
+
+    if (!usuario) return;
+
+    const nomeCompleto = usuario.nomeCompleto || "Usuário";
+
+    const nomeUsuario = document.getElementById("nomeUsuario");
+    const saudacaoUsuario = document.getElementById("saudacaoUsuario");
+
+    if (nomeUsuario) {
+        nomeUsuario.innerText = nomeCompleto;
+    }
+
+    if (saudacaoUsuario) {
+        saudacaoUsuario.innerText = `Olá, ${usuario.nome}!`;
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    carregarNomeUsuario();
+});
+
 // ===============================
 // AGUARDA CARREGAR A PÁGINA
 // ===============================
@@ -37,21 +63,28 @@ document.addEventListener("DOMContentLoaded", () => {
   const conteudo = document.getElementById("conteudo");
   const dashboard = conteudo.innerHTML;
 
+  atualizarDashboard();
+  configurarCardsInicio();
+
   // MENU CLICK
   document.querySelectorAll(".menu-item").forEach(item => {
     item.addEventListener("click", () => {
       const texto = item.querySelector("span")?.innerText.trim();
 
+      // INÍCIO
       if (texto === "Início") {
         conteudo.innerHTML = dashboard;
+        atualizarDashboard();
         return;
       }
 
+      // AGENDA
       if (texto === "Agenda") {
         abrirAgenda();
         return;
       }
 
+      // OUTROS
       carregarConstrucao();
     });
   });
@@ -59,11 +92,21 @@ document.addEventListener("DOMContentLoaded", () => {
   // SUBMENUS
   document.querySelectorAll(".submenu li").forEach(item => {
     item.addEventListener("click", () => {
+      const texto = item.querySelector("span")?.innerText.trim();
+
+      // DIÁRIO DO INSTRUTOR
+      if (texto === "Diário do Instrutor") {
+        abrirDiarioInstrutor();
+        return;
+      }
+
+      // OUTROS SUBMENUS
       carregarConstrucao();
     });
   });
 
 });
+
 
 // ===============================
 // ABRIR AGENDA
@@ -84,6 +127,42 @@ function abrirAgenda() {
     });
 }
 
+
+// ===============================
+// ABRIR DIÁRIO DO INSTRUTOR
+// ===============================
+function abrirDiarioInstrutor() {
+  fetch("pages/pagedashboard/diariodoinstrutor.html")
+    .then(response => response.text())
+    .then(data => {
+      const conteudo = document.getElementById("conteudo");
+      conteudo.innerHTML = data;
+
+      // remove script antigo se existir
+      const scriptAntigo = document.getElementById("scriptDiario");
+      if (scriptAntigo) {
+        scriptAntigo.remove();
+      }
+
+      // adiciona novamente o JS do diário
+      const novoScript = document.createElement("script");
+      novoScript.src = "js/diariodoinstrutor.js";
+      novoScript.id = "scriptDiario";
+
+      novoScript.onload = () => {
+        if (typeof carregarDiarioInstrutor === "function") {
+          carregarDiarioInstrutor();
+        }
+      };
+
+      document.body.appendChild(novoScript);
+    })
+    .catch(error => {
+      console.error("Erro ao carregar Diário do Instrutor:", error);
+    });
+}
+
+
 // ===============================
 // TELA EM CONSTRUÇÃO
 // ===============================
@@ -94,6 +173,7 @@ function carregarConstrucao() {
       document.getElementById("conteudo").innerHTML = html;
     });
 }
+
 
 // ===============================
 // CONFIGURAR DATA
@@ -106,7 +186,6 @@ function configurarAgenda() {
     data.setAttribute("min", hoje);
   }
 }
-
 // ===============================
 // LOCAL STORAGE
 // ===============================
@@ -121,24 +200,32 @@ function salvarAgenda() {
 // ===============================
 function carregarAlunos() {
   const select = document.getElementById("alunoSelecionado");
+
   if (!select) return;
 
-  select.innerHTML = `<option value="">Selecione o aluno...</option>`;
+  select.innerHTML = `
+    <option value="">Selecione o aluno...</option>
+  `;
 
   let alunos = [
     {
-      nome: "Pedro Lucas",
-      email: "pedrinholira007@gmail.com"
+      nomeCompleto: "Pedro Lucas",
+      email: "pedrinholira007@gmail.com",
+      tipo: "aluno"
     }
   ];
 
   let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
   usuarios.forEach(user => {
-    alunos.push({
-      nome: user.nome,
-      email: user.email
-    });
+    // SOMENTE ALUNOS
+    if (user.tipo === "aluno") {
+      alunos.push({
+        nomeCompleto: user.nomeCompleto || `${user.nome} ${user.sobrenome || ""}`.trim(),
+        email: user.email,
+        tipo: user.tipo
+      });
+    }
   });
 
   let usados = [];
@@ -148,8 +235,9 @@ function carregarAlunos() {
       usados.push(aluno.email);
 
       const option = document.createElement("option");
-      option.value = aluno.nome;
-      option.textContent = aluno.nome;
+      option.value = aluno.nomeCompleto;
+      option.textContent = aluno.nomeCompleto;
+
       select.appendChild(option);
     }
   });
@@ -232,6 +320,10 @@ function verificarAgenda() {
 
   if (!container || !titulo || !qtd) return;
 
+  // nome do instrutor realmente logado
+  const nomeInstrutor =
+    localStorage.getItem("nomeCompletoUsuario") || "Instrutor";
+
   container.innerHTML = "";
 
   if (!data || !tipoSelecionado) {
@@ -275,7 +367,7 @@ function verificarAgenda() {
       tag = aulaExistente.status || "Agendado";
 
       infoTexto = `
-        Aluno: ${aulaExistente.aluno || "Turma"} <br>
+        Aluno: ${aulaExistente.aluno || "Aluno"} <br>
         ${aulaExistente.local}
       `;
 
@@ -328,7 +420,11 @@ function verificarAgenda() {
 
     if (classe === "disponivel") {
       disponiveis++;
-      infoTexto = `Disponível para agendamento`;
+
+      infoTexto = `
+        Instrutor: ${nomeInstrutor} <br>
+        Disponível para agendamento
+      `;
     }
 
     if (classe === "manutencao") {
@@ -386,19 +482,32 @@ function verificarAgenda() {
         dados.aulas.push({
           hora: hora,
           local: localEscolhido,
+
+          // aluno correto
           aluno:
             tipoSelecionado === "Aula Teórica"
               ? "Turma"
               : alunoSelecionado,
+
+          // instrutor correto
+          instrutor: nomeInstrutor,
+
           tipo: tipoSelecionado,
           status: "Agendado",
           statusCancelamento: null,
-          situacaoFinal: null
+          situacaoFinal: null,
+          diarioPreenchido: false,
+          nota: "",
+          conteudo: "",
+          comoFoi: "",
+          observacoes: ""
         });
 
         agenda[data] = dados;
+
         salvarAgenda();
         verificarAgenda();
+        atualizarDashboard();
 
         alert("Aula marcada com sucesso.");
       };
@@ -424,6 +533,7 @@ function aprovarCancelamento(data, hora) {
 
   salvarAgenda();
   verificarAgenda();
+  atualizarDashboard();
 
   alert("Cancelamento aprovado.");
 }
@@ -458,6 +568,7 @@ function cancelarAulaDireto(data, hora) {
 
   salvarAgenda();
   verificarAgenda();
+  atualizarDashboard();
 
   alert("Aula cancelada pelo instrutor.");
 }
@@ -466,16 +577,39 @@ function cancelarAulaDireto(data, hora) {
 // AULA CONCLUÍDA
 // ===============================
 function marcarConcluida(data, hora) {
-  const aula = agenda[data].aulas.find(a => a.hora === hora);
-
-  if (aula) {
-    aula.situacaoFinal = "Aula Concluída";
+  if (!agenda[data]) {
+    alert("Data não encontrada.");
+    return;
   }
 
-  salvarAgenda();
-  verificarAgenda();
+  const aula = agenda[data].aulas.find(a => {
+    return a.hora === hora;
+  });
 
-  alert("Aula concluída.");
+  if (!aula) {
+    alert("Aula não encontrada.");
+    return;
+  }
+
+  // marca como concluída
+  aula.situacaoFinal = "Aula Concluída";
+
+  // dados extras para aparecer no Diário
+  aula.statusDiario = "Aula Realizada";
+  aula.presenca = "Presente";
+  aula.nota = aula.nota || "";
+  aula.conteudo = aula.conteudo || "";
+  aula.comoFoi = aula.comoFoi || "";
+  aula.observacoes = aula.observacoes || "";
+
+  // salvar corretamente
+  agenda[data].aulas = agenda[data].aulas;
+  localStorage.setItem("agenda", JSON.stringify(agenda));
+
+  verificarAgenda();
+  atualizarDashboard();
+
+  alert("Aula concluída com sucesso.");
 }
 
 // ===============================
@@ -493,3 +627,189 @@ function marcarFalta(data, hora) {
 
   alert("Falta registrada.");
 }
+
+// ===============================
+// CARDS DA TELA INICIAL
+// ===============================
+function configurarCardsInicio() {
+  document.addEventListener("click", function (e) {
+    const card = e.target.closest(".cards .card");
+    if (!card) return;
+
+    const span = card.querySelector("span");
+    if (!span) return;
+
+    const texto = span.innerText.trim();
+
+    if (
+      texto === "Treinamentos" ||
+      texto === "Voos" ||
+      texto === "Documentos" ||
+      texto === "Financeiro" ||
+      texto === "Extrato"
+    ) {
+      carregarConstrucao();
+    }
+  });
+}
+
+// chama só uma vez
+document.addEventListener("DOMContentLoaded", configurarCardsInicio);
+// ===============================
+// ===============================
+// ATUALIZAR DASHBOARD INICIAL
+// ===============================
+function atualizarDashboard() {
+  let proximaAula = null;
+  let totalVoos = 12;
+
+  const hoje = new Date();
+  hoje.setHours(0, 0, 0, 0);
+
+  Object.keys(agenda)
+    .sort()
+    .forEach(data => {
+      const dados = agenda[data];
+      const dataAula = new Date(data + "T00:00:00");
+
+      dados.aulas.forEach(aula => {
+        // pegar apenas próxima aula futura ou de hoje
+        if (
+          !proximaAula &&
+          aula.status === "Agendado" &&
+          dataAula >= hoje
+        ) {
+          proximaAula = {
+            data,
+            hora: aula.hora,
+            local: aula.local
+          };
+        }
+
+        // contar voo concluído
+        if (aula.situacaoFinal === "Aula Concluída") {
+          totalVoos++;
+        }
+      });
+    });
+
+  // atualizar "Voos Este Mês"
+  const stats = document.querySelectorAll(".stat strong");
+
+  if (stats[0]) {
+    stats[0].innerText = totalVoos;
+  }
+
+  // atualizar card Próximo Voo
+  const flightInfo = document.querySelector(".flight-info");
+
+  if (!flightInfo) return;
+
+  if (proximaAula) {
+    flightInfo.innerHTML = `
+      <strong>Próximo Voo Agendado</strong>
+      <p>${formatarData(proximaAula.data)} às ${proximaAula.hora}</p>
+      <p>${proximaAula.local}</p>
+    `;
+  } else {
+    flightInfo.innerHTML = `
+      <strong>Próximo Voo Agendado</strong>
+      <p>Nenhuma aula marcada no momento</p>
+      <p>Aguardando novo agendamento</p>
+    `;
+  }
+}
+
+// ===============================
+// ATUALIZAR DASHBOARD AUTOMÁTICO
+// ===============================
+function atualizarDashboard() {
+  let proximaAula = null;
+  let totalVoos = 12;
+
+  const hoje = new Date();
+  hoje.setHours(0, 0, 0, 0);
+
+  Object.keys(agenda)
+    .sort()
+    .forEach(data => {
+      const dados = agenda[data];
+      const dataAula = new Date(data + "T00:00:00");
+
+      dados.aulas.forEach(aula => {
+        // próxima aula agendada
+        if (
+          !proximaAula &&
+          aula.status === "Agendado" &&
+          dataAula >= hoje
+        ) {
+          proximaAula = {
+            data,
+            hora: aula.hora,
+            local: aula.local
+          };
+        }
+
+        // contar aulas concluídas
+        if (aula.situacaoFinal === "Aula Concluída") {
+          totalVoos++;
+        }
+      });
+    });
+
+  // atualizar card "Voos Este Mês"
+  const stats = document.querySelectorAll(".stat strong");
+
+  if (stats[0]) {
+    stats[0].innerText = totalVoos;
+  }
+
+  // atualizar card "Próximo Voo Agendado"
+  const flightInfo = document.querySelector(".flight-info");
+
+  if (!flightInfo) return;
+
+  if (proximaAula) {
+    flightInfo.innerHTML = `
+      <strong>Próximo Voo Agendado</strong>
+      <p>${formatarData(proximaAula.data)} às ${proximaAula.hora}</p>
+      <p>${proximaAula.local}</p>
+    `;
+  } else {
+    flightInfo.innerHTML = `
+      <strong>Próximo Voo Agendado</strong>
+      <p>Nenhuma aula marcada no momento</p>
+      <p>Aguardando novo agendamento</p>
+    `;
+  }
+}
+
+// ===============================
+// ATUALIZA AUTOMATICAMENTE
+// ===============================
+window.addEventListener("storage", () => {
+  atualizarDashboard();
+});
+
+setInterval(() => {
+  atualizarDashboard();
+}, 1000);
+
+document.addEventListener("DOMContentLoaded", () => {
+    const nomeCompleto =
+        localStorage.getItem("nomeCompletoUsuario") || "Instrutor";
+
+    const nome =
+        localStorage.getItem("nomeUsuario") || "Instrutor";
+
+    const sidebar = document.getElementById("nomeInstrutorSidebar");
+    const saudacao = document.getElementById("saudacaoInstrutor");
+
+    if (sidebar) {
+        sidebar.textContent = nomeCompleto;
+    }
+
+    if (saudacao) {
+        saudacao.textContent = `Olá, ${nome}!`;
+    }
+});
