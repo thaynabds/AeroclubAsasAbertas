@@ -21,6 +21,19 @@ function carregarDiarioInstrutor() {
     : "";
 
   const agenda = JSON.parse(localStorage.getItem("agenda")) || {};
+  const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+  // somente alunos cadastrados
+  const alunosCadastrados = usuarios
+    .filter(user => user.tipo === "aluno")
+    .map(user =>
+      (
+        user.nomeCompleto ||
+        `${user.nome || ""} ${user.sobrenome || ""}`
+      )
+        .toLowerCase()
+        .trim()
+    );
 
   container.innerHTML = "";
 
@@ -30,12 +43,19 @@ function carregarDiarioInstrutor() {
     const aulas = agenda[data].aulas || [];
 
     aulas.forEach((aula, index) => {
-      const nomeAluno = (aula.aluno || "").toLowerCase();
+      const nomeAluno = (aula.aluno || "")
+        .toLowerCase()
+        .trim();
 
-      // filtro por nome
+      // só aceita alunos realmente cadastrados
+      if (!alunosCadastrados.includes(nomeAluno)) {
+        return;
+      }
+
+      // filtro digitado
       if (
         textoFiltro &&
-        !nomeAluno.includes(textoFiltro)
+        !nomeAluno.includes(textoFiltro.toLowerCase().trim())
       ) {
         return;
       }
@@ -220,7 +240,6 @@ function salvarDiario(data, index) {
   aula.observacoes =
     document.getElementById(`obs-${data}-${index}`)?.value || "";
 
-  // CORREÇÃO PRINCIPAL
   if (!aula.situacaoFinal) {
     aula.situacaoFinal = "Aula Concluída";
   }

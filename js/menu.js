@@ -465,6 +465,12 @@ function atualizarDashboardAluno() {
   const hoje = new Date();
   hoje.setHours(0, 0, 0, 0);
 
+  // aluno realmente logado
+  const nomeAlunoLogado =
+    (localStorage.getItem("nomeCompletoUsuario") || "")
+      .toLowerCase()
+      .trim();
+
   Object.keys(agenda)
     .sort()
     .forEach(data => {
@@ -472,10 +478,17 @@ function atualizarDashboardAluno() {
       const dataAula = new Date(data + "T00:00:00");
 
       dados.aulas.forEach(aula => {
+        const nomeAlunoAula =
+          (aula.aluno || "")
+            .toLowerCase()
+            .trim();
+
+        // pega somente a aula do aluno logado
         if (
           !proximaAula &&
           aula.status === "Agendado" &&
-          dataAula >= hoje
+          dataAula >= hoje &&
+          nomeAlunoAula === nomeAlunoLogado
         ) {
           proximaAula = {
             data,
@@ -484,7 +497,11 @@ function atualizarDashboardAluno() {
           };
         }
 
-        if (aula.situacaoFinal === "Aula Concluída") {
+        // conta somente voos concluídos do aluno logado
+        if (
+          aula.situacaoFinal === "Aula Concluída" &&
+          nomeAlunoAula === nomeAlunoLogado
+        ) {
           totalVoos++;
         }
       });
