@@ -1,27 +1,37 @@
+function configurarLogoutCard() {
+  const logoutCard = document.getElementById("logoutCard");
+
+  if (logoutCard) {
+    logoutCard.onclick = () => {
+      window.location.href = "/index.html";
+    };
+  }
+}
+
 function carregarNomeUsuario() {
-    const emailLogado = localStorage.getItem("usuarioLogado");
-    const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+  const emailLogado = localStorage.getItem("usuarioLogado");
+  const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-    const usuario = usuarios.find(u => u.email === emailLogado);
+  const usuario = usuarios.find(u => u.email === emailLogado);
 
-    if (!usuario) return;
+  if (!usuario) return;
 
-    const nomeCompleto = usuario.nomeCompleto || "Usuário";
+  const nomeCompleto = usuario.nomeCompleto || "Usuário";
 
-    const nomeUsuario = document.getElementById("nomeUsuario");
-    const saudacaoUsuario = document.getElementById("saudacaoUsuario");
+  const nomeUsuario = document.getElementById("nomeUsuario");
+  const saudacaoUsuario = document.getElementById("saudacaoUsuario");
 
-    if (nomeUsuario) {
-        nomeUsuario.innerText = nomeCompleto;
-    }
+  if (nomeUsuario) {
+    nomeUsuario.innerText = nomeCompleto;
+  }
 
-    if (saudacaoUsuario) {
-        saudacaoUsuario.innerText = `Olá, ${usuario.nome}!`;
-    }
+  if (saudacaoUsuario) {
+    saudacaoUsuario.innerText = `Olá, ${usuario.nome}!`;
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    carregarNomeUsuario();
+  carregarNomeUsuario();
 });
 
 // ===============================
@@ -74,7 +84,11 @@ document.addEventListener("DOMContentLoaded", () => {
       // INÍCIO
       if (texto === "Início") {
         conteudo.innerHTML = dashboard;
-        atualizarDashboard();
+
+        setTimeout(() => {
+          configurarLogoutCard(); 
+        }, 0);
+
         return;
       }
 
@@ -796,20 +810,20 @@ setInterval(() => {
 }, 1000);
 
 document.addEventListener("DOMContentLoaded", () => {
-    const nomeCompleto =
-        localStorage.getItem("nomeCompletoUsuario") || "Instrutor";
+  const nomeCompleto =
+    localStorage.getItem("nomeCompletoUsuario") || "Instrutor";
 
-    const nome =
-        localStorage.getItem("nomeUsuario") || "Instrutor";
+  const nome =
+    localStorage.getItem("nomeUsuario") || "Instrutor";
 
-    const sidebar = document.getElementById("nomeInstrutorSidebar");
-    const saudacao = document.getElementById("saudacaoInstrutor");
+  const sidebar = document.getElementById("nomeInstrutorSidebar");
+  const saudacao = document.getElementById("saudacaoInstrutor");
 
-    if (sidebar) {
-        sidebar.textContent = nomeCompleto;
-    }
+  if (sidebar) {
+    sidebar.textContent = nomeCompleto;
+  }
 
-    if (saudacao) {
-        saudacao.textContent = `Olá, ${nome}!`;
-    }
+  if (saudacao) {
+    saudacao.textContent = `Olá, ${nome}!`;
+  }
 });

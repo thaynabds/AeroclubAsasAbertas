@@ -1,3 +1,13 @@
+function configurarLogoutCard() {
+  const logoutCard = document.getElementById("logoutCard");
+
+  if (logoutCard) {
+    logoutCard.onclick = () => {
+      window.location.href = "/index.html";
+    };
+  }
+}
+
 function carregarNomeUsuario() {
   const emailLogado = localStorage.getItem("usuarioLogado");
   const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
@@ -76,9 +86,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const texto = item.querySelector("span")?.innerText.trim();
 
-      // INÍCIO
       if (texto === "Início") {
         conteudo.innerHTML = dashboard;
+
+        setTimeout(() => {
+          configurarLogoutCard(); 
+        }, 0);
+
         return;
       }
 
