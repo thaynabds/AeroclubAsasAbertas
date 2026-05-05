@@ -139,13 +139,13 @@
 .cards {
   display: flex;
   flex-wrap: nowrap;
-  gap: 25px;
+  gap: 37px;
   margin-top: 20px;
 }
 
 .card {
-  width: 213px;
-  height: 140px;
+  width: 203px;
+  height: 130px;
   background: #244c73;
   color: white;
   border-radius: 12px;
