@@ -138,7 +138,6 @@
 
 .cards {
   display: flex;
-  flex-wrap: nowrap;
   gap: 37px;
   margin-top: 20px;
 }
