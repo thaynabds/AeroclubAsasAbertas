@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // ===============================
 document.addEventListener("DOMContentLoaded", () => {
 
-  // DROPDOWN MENU
+  // DROPDOWN MENUs
   document.querySelectorAll(".menu-title").forEach(title => {
     title.addEventListener("click", function () {
       const parent = this.parentElement;
