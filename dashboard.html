@@ -1,28 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<title>Asas Aberta</title>
-
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/menu.css">
-<link rel="stylesheet" href="css/pagesdashboard/agenda.css">
-<link rel="icon" type="image/x-icon" href="assets/fav32x32.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asas Abertas</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/pagesdashboard/agenda.css">
+  <link rel="icon" type="image/x-icon" href="assets/fav32x32.png">
 </head>
 
 <body>
 
+<!-- Botão hamburguer fixo (só aparece no mobile) -->
+<button class="sidebar-toggle" id="sidebarToggle" aria-label="Abrir menu">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+<!-- Overlay escuro atrás da sidebar -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
 <div class="container">
 
   <!-- SIDEBAR -->
-  <aside class="sidebar">
+  <aside class="sidebar" id="sidebar">
 
-    <!-- LOGO -->
     <div class="logo">
       <img src="../../assets/logosemfundo.png" alt="Aeroclub Logo">
     </div>
 
-    <!-- USUÁRIO DINÂMICO -->
     <div class="user-info">
       <strong id="nomeUsuario">Aluno</strong>
       <span>Aluno</span>
@@ -33,199 +41,95 @@
     <nav>
       <ul>
 
-        <!-- INÍCIO -->
         <li class="menu-item">
           <img class="menu-icon" src="assets/icon-inicio.svg" alt="">
           <span>Início</span>
         </li>
 
-        <!-- AGENDA -->
         <li class="menu-item">
           <img class="menu-icon" src="assets/icon-agenda.svg" alt="">
           <span>Agenda</span>
         </li>
 
-        <!-- TREINAMENTO -->
         <li class="dropdown">
-
           <div class="menu-title">
             <div class="menu-left">
               <img class="menu-icon" src="assets/icon-treinamento.svg" alt="">
               <span>Treinamento</span>
             </div>
-
             <img class="arrow-icon" src="assets/vector.svg" alt="">
           </div>
-
           <ul class="submenu">
-
-            <li>
-              <img class="submenu-icon" src="assets/icon-cronograma.svg" alt="">
-              <span>Cronogramas de Aulas Teóricas (Ementa)</span>
-            </li>
-
-            <li>
-              <img class="submenu-icon" src="assets/icon-alunos.svg" alt="">
-              <span>Diário do Aluno</span>
-            </li>
-
-            <li>
-              <img class="submenu-icon" src="assets/icon-curso.svg" alt="">
-              <span>Curso Teórico</span>
-            </li>
-
+            <li><img class="submenu-icon" src="assets/icon-cronograma.svg" alt=""><span>Cronogramas de Aulas Teóricas (Ementa)</span></li>
+            <li><img class="submenu-icon" src="assets/icon-alunos.svg" alt=""><span>Diário do Aluno</span></li>
+            <li><img class="submenu-icon" src="assets/icon-curso.svg" alt=""><span>Curso Teórico</span></li>
           </ul>
         </li>
 
-        <!-- VOOS -->
         <li class="dropdown">
-
           <div class="menu-title">
             <div class="menu-left">
               <img class="menu-icon" src="assets/icon-voos.svg" alt="">
               <span>Voos</span>
             </div>
-
             <img class="arrow-icon" src="assets/vector.svg" alt="">
           </div>
-
           <ul class="submenu">
-
-            <li>
-              <img class="submenu-icon" src="assets/icon-historico.svg" alt="">
-              <span>Histórico de Voos</span>
-            </li>
-
-            <li>
-              <img class="submenu-icon" src="assets/icon-ficha.svg" alt="">
-              <span>Ficha de Voos</span>
-            </li>
-
-            <li>
-              <img class="submenu-icon" src="assets/icon-escala.svg" alt="">
-              <span>Escala de Voos (Instrutores)</span>
-            </li>
-
-            <li>
-              <img class="submenu-icon" src="assets/icon-reserva.svg" alt="">
-              <span>Escala Reserva/Sobreaviso</span>
-            </li>
-
-              <li>
-              <img class="submenu-icon" src="assets/icon-manutencao.svg" alt="">
-              <span>Manutenção</span>
-            </li>
-
+            <li><img class="submenu-icon" src="assets/icon-historico.svg" alt=""><span>Histórico de Voos</span></li>
+            <li><img class="submenu-icon" src="assets/icon-ficha.svg" alt=""><span>Ficha de Voos</span></li>
+            <li><img class="submenu-icon" src="assets/icon-escala.svg" alt=""><span>Escala de Voos (Instrutores)</span></li>
+            <li><img class="submenu-icon" src="assets/icon-reserva.svg" alt=""><span>Escala Reserva/Sobreaviso</span></li>
+            <li><img class="submenu-icon" src="assets/icon-manutencao.svg" alt=""><span>Manutenção</span></li>
           </ul>
         </li>
 
-        <!-- DOCUMENTOS -->
         <li class="dropdown">
-
           <div class="menu-title">
             <div class="menu-left">
               <img class="menu-icon" src="assets/icon-documentos.svg" alt="">
               <span>Documentos</span>
             </div>
-
             <img class="arrow-icon" src="assets/vector.svg" alt="">
           </div>
-
           <ul class="submenu">
-
-            <li>
-              <img class="submenu-icon" src="assets/icon-certificado.svg" alt="">
-              <span>Certificados</span>
-            </li>
-
-            <li>
-              <img class="submenu-icon" src="assets/icon-avisos.svg" alt="">
-              <span>Avisos Operacionais</span>
-            </li>
-
+            <li><img class="submenu-icon" src="assets/icon-certificado.svg" alt=""><span>Certificados</span></li>
+            <li><img class="submenu-icon" src="assets/icon-avisos.svg" alt=""><span>Avisos Operacionais</span></li>
           </ul>
         </li>
 
-        <!-- FINANCEIRO -->
         <li class="dropdown">
-
           <div class="menu-title">
             <div class="menu-left">
               <img class="menu-icon" src="assets/icon-financeiro.svg" alt="">
               <span>Financeiro</span>
             </div>
-
             <img class="arrow-icon" src="assets/vector.svg" alt="">
           </div>
-
           <ul class="submenu">
-
-            <li>
-              <img class="submenu-icon" src="assets/icon-compra.svg" alt="">
-              <span>Compra - Aula</span>
-            </li>
-
-            <li>
-              <img class="submenu-icon" src="assets/icon-compra.svg" alt="">
-              <span>Compra - Voos</span>
-            </li>
-
-            <li>
-              <img class="submenu-icon" src="assets/icon-compra.svg" alt="">
-              <span>Compra - Aluguel</span>
-            </li>
-
-            <li>
-              <img class="submenu-icon" src="assets/icon-venda.svg" alt="">
-              <span>Vendas (Instrutores) - Aula</span>
-            </li>
-
-            <li>
-              <img class="submenu-icon" src="assets/icon-venda.svg" alt="">
-              <span>Vendas (Instrutores) - Voos</span>
-            </li>
-
-            <li>
-              <img class="submenu-icon" src="assets/icon-venda.svg" alt="">
-              <span>Vendas (Instrutores) - Aluguel</span>
-            </li>
-
-            <li>
-              <img class="submenu-icon" src="assets/icon-extrato.svg" alt="">
-              <span>Extrato</span>
-            </li>
-
+            <li><img class="submenu-icon" src="assets/icon-compra.svg" alt=""><span>Compra - Aula</span></li>
+            <li><img class="submenu-icon" src="assets/icon-compra.svg" alt=""><span>Compra - Voos</span></li>
+            <li><img class="submenu-icon" src="assets/icon-compra.svg" alt=""><span>Compra - Aluguel</span></li>
+            <li><img class="submenu-icon" src="assets/icon-venda.svg" alt=""><span>Vendas (Instrutores) - Aula</span></li>
+            <li><img class="submenu-icon" src="assets/icon-venda.svg" alt=""><span>Vendas (Instrutores) - Voos</span></li>
+            <li><img class="submenu-icon" src="assets/icon-venda.svg" alt=""><span>Vendas (Instrutores) - Aluguel</span></li>
+            <li><img class="submenu-icon" src="assets/icon-extrato.svg" alt=""><span>Extrato</span></li>
           </ul>
         </li>
 
-        <!-- EXTRATO -->
         <li class="dropdown">
-
           <div class="menu-title">
             <div class="menu-left">
               <img class="menu-icon" src="assets/icon-extrato.svg" alt="">
               <span>Extrato</span>
             </div>
-
             <img class="arrow-icon" src="assets/vector.svg" alt="">
           </div>
-
           <ul class="submenu">
-
-            <li>
-              <img class="submenu-icon" src="assets/icon-instrutoraluno.svg" alt="">
-              <span>Aluno</span>
-            </li>
-
-            <li>
-              <img class="submenu-icon" src="assets/icon-instrutoraluno.svg" alt="">
-              <span>Instrutor</span>
-            </li>
-
+            <li><img class="submenu-icon" src="assets/icon-instrutoraluno.svg" alt=""><span>Aluno</span></li>
+            <li><img class="submenu-icon" src="assets/icon-instrutoraluno.svg" alt=""><span>Instrutor</span></li>
           </ul>
         </li>
 
-        <!-- SAIR -->
         <li class="menu-item logout" id="logoutMenu">
           <img class="menu-icon" src="assets/icon-sair.svg" alt="">
           <span>Sair</span>
@@ -239,59 +143,38 @@
   <!-- MAIN -->
   <main class="main">
 
-    <!-- BANNER DINÂMICO -->
     <section class="banner">
       <h2 id="saudacaoUsuario">Olá!</h2>
       <p>Aluno</p>
     </section>
 
-    <!-- ÁREA DINÂMICA -->
     <div id="conteudo">
 
       <section class="cards">
-
         <div class="card">
-          <div class="icon">
-            <img src="assets/icon-treinamento1.svg" alt="">
-          </div>
+          <div class="icon"><img src="assets/icon-treinamento1.svg" alt=""></div>
           <span>Treinamentos</span>
         </div>
-
         <div class="card">
-          <div class="icon">
-            <img src="assets/icon-voos1.svg" alt="">
-          </div>
+          <div class="icon"><img src="assets/icon-voos1.svg" alt=""></div>
           <span>Voos</span>
         </div>
-
         <div class="card">
-          <div class="icon">
-            <img src="assets/icon-documentos1.svg" alt="">
-          </div>
+          <div class="icon"><img src="assets/icon-documentos1.svg" alt=""></div>
           <span>Documentos</span>
         </div>
-
         <div class="card">
-          <div class="icon">
-            <img src="assets/icon-financeiro1.svg" alt="">
-          </div>
+          <div class="icon"><img src="assets/icon-financeiro1.svg" alt=""></div>
           <span>Financeiro</span>
         </div>
-
         <div class="card">
-          <div class="icon">
-            <img src="assets/icon-extrato1.svg" alt="">
-          </div>
+          <div class="icon"><img src="assets/icon-extrato1.svg" alt=""></div>
           <span>Extrato</span>
         </div>
-
         <div class="card logout" id="logoutCard">
-          <div class="icon">
-            <img src="assets/icon-sair1.svg" alt="">
-          </div>
+          <div class="icon"><img src="assets/icon-sair1.svg" alt=""></div>
           <span>Sair</span>
         </div>
-
       </section>
 
       <section class="stats">
@@ -299,12 +182,10 @@
           <span>Voos Este Mês</span>
           <strong>6</strong>
         </div>
-
         <div class="stat">
           <span>Horas de Voo</span>
           <strong>13.7</strong>
         </div>
-
         <div class="stat">
           <span>Turma</span>
           <strong>109</strong>
@@ -313,7 +194,6 @@
 
       <section class="flight">
         <div class="flight-img"></div>
-
         <div class="flight-info">
           <strong></strong>
           <p></p>
@@ -329,6 +209,30 @@
 
 <script src="js/menu.js" defer></script>
 <script src="js/diariodoaluno.js" defer></script>
+
+<script>
+  const toggle   = document.getElementById('sidebarToggle');
+  const sidebar  = document.getElementById('sidebar');
+  const overlay  = document.getElementById('sidebarOverlay');
+
+  function openSidebar() {
+    sidebar.classList.add('open');
+    overlay.classList.add('active');
+    toggle.classList.add('open');
+  }
+
+  function closeSidebar() {
+    sidebar.classList.remove('open');
+    overlay.classList.remove('active');
+    toggle.classList.remove('open');
+  }
+
+  toggle.addEventListener('click', () => {
+    sidebar.classList.contains('open') ? closeSidebar() : openSidebar();
+  });
+
+  overlay.addEventListener('click', closeSidebar);
+</script>
 
 </body>
 </html>
