@@ -43,19 +43,20 @@ function carregarDiarioInstrutor() {
     const aulas = agenda[data].aulas || [];
 
     aulas.forEach((aula, index) => {
+
       const nomeAluno = (aula.aluno || "")
         .toLowerCase()
         .trim();
 
-      // só aceita alunos realmente cadastrados
+      // somente alunos cadastrados
       if (!alunosCadastrados.includes(nomeAluno)) {
         return;
       }
 
-      // filtro digitado
+      // filtro
       if (
         textoFiltro &&
-        !nomeAluno.includes(textoFiltro.toLowerCase().trim())
+        !nomeAluno.includes(textoFiltro)
       ) {
         return;
       }
@@ -86,6 +87,7 @@ function carregarDiarioInstrutor() {
           </div>
 
           <div class="lado-direito">
+
             <span class="tag-status">
               ${
                 aula.situacaoFinal === "Aluno não compareceu"
@@ -113,6 +115,7 @@ function carregarDiarioInstrutor() {
               `
                 : ""
             }
+
           </div>
         </div>
 
@@ -123,6 +126,7 @@ function carregarDiarioInstrutor() {
 
             <div class="bloco-form">
               <label>Nota do Aluno (0 a 10)</label>
+
               <input
                 type="text"
                 id="nota-${data}-${index}"
@@ -133,6 +137,7 @@ function carregarDiarioInstrutor() {
 
             <div class="bloco-form">
               <label>Conteúdo da Aula</label>
+
               <textarea
                 id="conteudo-${data}-${index}"
                 placeholder="Descreva o conteúdo da aula"
@@ -141,6 +146,7 @@ function carregarDiarioInstrutor() {
 
             <div class="bloco-form">
               <label>Como a Aula Aconteceu</label>
+
               <textarea
                 id="como-${data}-${index}"
                 placeholder="Explique como foi a aula"
@@ -149,6 +155,7 @@ function carregarDiarioInstrutor() {
 
             <div class="bloco-form">
               <label>Observações do Professor</label>
+
               <textarea
                 id="obs-${data}-${index}"
                 placeholder="Digite observações importantes"
@@ -157,7 +164,7 @@ function carregarDiarioInstrutor() {
 
             <button
               class="btn-salvar"
-              onclick="salvarDiario('${data}', ${index})"
+              onclick="salvarDiario('${data}', '${aula.hora}')"
             >
               Salvar Alterações
             </button>
@@ -189,14 +196,14 @@ function carregarDiarioInstrutor() {
 
             <button
               class="btn-salvar"
-              onclick="editarDiario('${data}', ${index})"
+              onclick="editarDiario('${data}', '${aula.hora}')"
             >
               Editar
             </button>
 
             <button
               class="btn-salvar"
-              onclick="excluirDiario('${data}', ${index})"
+              onclick="excluirDiario('${data}', '${aula.hora}')"
             >
               Excluir
             </button>
@@ -221,12 +228,24 @@ function carregarDiarioInstrutor() {
   }
 }
 
-function salvarDiario(data, index) {
-  const agenda = JSON.parse(localStorage.getItem("agenda")) || {};
+// =====================================
+// SALVAR DIÁRIO
+// =====================================
+function salvarDiario(data, hora) {
 
-  if (!agenda[data] || !agenda[data].aulas[index]) return;
+  const agenda =
+    JSON.parse(localStorage.getItem("agenda")) || {};
 
-  const aula = agenda[data].aulas[index];
+  if (!agenda[data]) return;
+
+  const aula = agenda[data].aulas.find(a =>
+    a.hora === hora
+  );
+
+  if (!aula) return;
+
+  const index =
+    agenda[data].aulas.indexOf(aula);
 
   aula.nota =
     document.getElementById(`nota-${data}-${index}`)?.value || "";
@@ -240,10 +259,6 @@ function salvarDiario(data, index) {
   aula.observacoes =
     document.getElementById(`obs-${data}-${index}`)?.value || "";
 
-  if (!aula.situacaoFinal) {
-    aula.situacaoFinal = "Aula Concluída";
-  }
-
   aula.diarioPreenchido = true;
 
   localStorage.setItem("agenda", JSON.stringify(agenda));
@@ -253,32 +268,54 @@ function salvarDiario(data, index) {
   alert("Alterações salvas com sucesso.");
 }
 
-function editarDiario(data, index) {
-  const agenda = JSON.parse(localStorage.getItem("agenda")) || {};
+// =====================================
+// EDITAR DIÁRIO
+// =====================================
+function editarDiario(data, hora) {
 
-  if (!agenda[data] || !agenda[data].aulas[index]) return;
+  const agenda =
+    JSON.parse(localStorage.getItem("agenda")) || {};
 
-  agenda[data].aulas[index].diarioPreenchido = false;
+  if (!agenda[data]) return;
+
+  const aula = agenda[data].aulas.find(a =>
+    a.hora === hora
+  );
+
+  if (!aula) return;
+
+  aula.diarioPreenchido = false;
 
   localStorage.setItem("agenda", JSON.stringify(agenda));
 
   carregarDiarioInstrutor();
 }
 
-function excluirDiario(data, index) {
-  const agenda = JSON.parse(localStorage.getItem("agenda")) || {};
+// =====================================
+// EXCLUIR DIÁRIO
+// =====================================
+function excluirDiario(data, hora) {
 
-  if (!agenda[data] || !agenda[data].aulas[index]) return;
+  const agenda =
+    JSON.parse(localStorage.getItem("agenda")) || {};
+
+  if (!agenda[data]) return;
+
+  const aula = agenda[data].aulas.find(a =>
+    a.hora === hora
+  );
+
+  if (!aula) return;
 
   if (!confirm("Deseja realmente excluir este diário?")) {
     return;
   }
 
-  agenda[data].aulas[index].nota = "";
-  agenda[data].aulas[index].conteudo = "";
-  agenda[data].aulas[index].comoFoi = "";
-  agenda[data].aulas[index].observacoes = "";
-  agenda[data].aulas[index].diarioPreenchido = false;
+  aula.nota = "";
+  aula.conteudo = "";
+  aula.comoFoi = "";
+  aula.observacoes = "";
+  aula.diarioPreenchido = false;
 
   localStorage.setItem("agenda", JSON.stringify(agenda));
 
@@ -287,7 +324,11 @@ function excluirDiario(data, index) {
   alert("Diário removido com sucesso.");
 }
 
+// =====================================
+// FORMATAR DATA
+// =====================================
 function formatarData(data) {
+
   const d = new Date(data + "T00:00:00");
 
   const dia = String(d.getDate()).padStart(2, "0");

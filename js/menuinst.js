@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
         conteudo.innerHTML = dashboard;
 
         setTimeout(() => {
-          configurarLogoutCard(); 
+          configurarLogoutCard();
         }, 0);
 
         return;
@@ -349,9 +349,11 @@ function verificarAgenda() {
   titulo.innerText = `Agenda do Instrutor em ${formatarData(data)}`;
 
   const dados = agenda[data] || { aulas: [] };
+
   let disponiveis = 0;
 
   horarios.forEach(hora => {
+
     let classe = "disponivel";
     let texto = "Disponível";
     let tag = "";
@@ -372,12 +374,25 @@ function verificarAgenda() {
 
     // verificar aula existente
     const aulaExistente = dados.aulas.find(a => {
-      return getBlocoAula(a.hora).includes(hora);
+      return (
+        getBlocoAula(a.hora).includes(hora) &&
+        a.tipo === tipoSelecionado
+      );
     });
 
+    // =====================================
+    // AULA EXISTENTE
+    // =====================================
     if (aulaExistente) {
+
+      // só pode gerenciar se o filtro for o mesmo aluno
+      const podeGerenciar =
+        alunoSelecionado &&
+        aulaExistente.aluno === alunoSelecionado;
+
       classe = "indisponivel";
       texto = "Em aula";
+
       tag = aulaExistente.status || "Agendado";
 
       infoTexto = `
@@ -385,10 +400,15 @@ function verificarAgenda() {
         ${aulaExistente.local}
       `;
 
-      // solicitação de cancelamento do aluno
-      if (aulaExistente.statusCancelamento === "pendente") {
+      // solicitação cancelamento
+      if (
+        aulaExistente.statusCancelamento === "pendente" &&
+        podeGerenciar
+      ) {
+
         infoExtra += `
           <div class="acoes">
+
             <button onclick="aprovarCancelamento('${data}', '${aulaExistente.hora}')">
               Aprovar Cancelamento
             </button>
@@ -396,23 +416,31 @@ function verificarAgenda() {
             <button onclick="recusarCancelamento('${data}', '${aulaExistente.hora}')">
               Recusar
             </button>
+
           </div>
         `;
       }
 
-      // cancelamento direto pelo instrutor
-      infoExtra += `
-        <div class="acoes">
-          <button onclick="cancelarAulaDireto('${data}', '${aulaExistente.hora}')">
-            Cancelar Aula
-          </button>
-        </div>
-      `;
+      // cancelar aula
+      if (podeGerenciar) {
 
-      // status final
-      if (!aulaExistente.situacaoFinal) {
         infoExtra += `
           <div class="acoes">
+
+            <button onclick="cancelarAulaDireto('${data}', '${aulaExistente.hora}')">
+              Cancelar Aula
+            </button>
+
+          </div>
+        `;
+      }
+
+      // status final
+      if (!aulaExistente.situacaoFinal && podeGerenciar) {
+
+        infoExtra += `
+          <div class="acoes">
+
             <button onclick="marcarConcluida('${data}', '${aulaExistente.hora}')">
               Aula Concluída
             </button>
@@ -420,19 +448,26 @@ function verificarAgenda() {
             <button onclick="marcarFalta('${data}', '${aulaExistente.hora}')">
               Não Compareceu
             </button>
+
           </div>
         `;
-      } else {
+
+      } else if (aulaExistente.situacaoFinal && podeGerenciar) {
+
         infoExtra += `
           <div class="situacao-final">
+
             Status Final:
             <strong>${aulaExistente.situacaoFinal}</strong>
+
           </div>
         `;
       }
     }
 
+    // disponível
     if (classe === "disponivel") {
+
       disponiveis++;
 
       infoTexto = `
@@ -441,40 +476,43 @@ function verificarAgenda() {
       `;
     }
 
+    // manutenção
     if (classe === "manutencao") {
       infoTexto = "";
     }
 
+    // criar card
     const card = document.createElement("div");
+
     card.className = `card-horario ${classe}`;
 
     card.innerHTML = `
       <div class="topo">
+
         <div>
           <span class="hora">${hora}</span>
           <span class="status">${texto}</span>
         </div>
 
         ${tag ? `<span class="tag-agendado">${tag}</span>` : ""}
+
       </div>
 
       ${infoTexto ? `<div class="info">${infoTexto}</div>` : ""}
+
       ${infoExtra}
     `;
 
-    // marcar aula
+    // =====================================
+    // MARCAR AULA
+    // =====================================
     if (classe === "disponivel") {
+
       card.style.cursor = "pointer";
 
       card.onclick = () => {
-        if (
-          tipoSelecionado !== "Aula Teórica" &&
-          dados.aulas.some(a => a.tipo === tipoSelecionado)
-        ) {
-          alert("Já existe uma aula deste tipo agendada neste dia.");
-          return;
-        }
 
+        // selecionar aluno
         if (
           tipoSelecionado !== "Aula Teórica" &&
           !alunoSelecionado
@@ -483,44 +521,79 @@ function verificarAgenda() {
           return;
         }
 
+        // impedir MESMO aluno ter 2 aulas iguais no dia
+        const alunoJaTemAula = dados.aulas.some(a => {
+
+          return (
+            a.aluno === alunoSelecionado &&
+            a.tipo === tipoSelecionado
+          );
+
+        });
+
+        if (
+          tipoSelecionado !== "Aula Teórica" &&
+          alunoJaTemAula
+        ) {
+
+          alert("Este aluno já possui uma aula deste tipo neste dia.");
+
+          return;
+        }
+
         let localEscolhido;
 
         if (tipoSelecionado.includes("Prática")) {
+
           localEscolhido =
             "Hangar " + Math.floor(Math.random() * 3 + 1);
+
         } else {
+
           localEscolhido =
             "Sala " + Math.floor(Math.random() * 3 + 1);
         }
 
+        // salvar aula
         dados.aulas.push({
+
           hora: hora,
+
           local: localEscolhido,
 
-          // aluno correto
           aluno:
             tipoSelecionado === "Aula Teórica"
               ? "Turma"
               : alunoSelecionado,
 
-          // instrutor correto
           instrutor: nomeInstrutor,
 
           tipo: tipoSelecionado,
+
           status: "Agendado",
+
           statusCancelamento: null,
+
           situacaoFinal: null,
+
           diarioPreenchido: false,
+
           nota: "",
+
           conteudo: "",
+
           comoFoi: "",
+
           observacoes: ""
+
         });
 
         agenda[data] = dados;
 
         salvarAgenda();
+
         verificarAgenda();
+
         atualizarDashboard();
 
         alert("Aula marcada com sucesso.");
@@ -528,6 +601,7 @@ function verificarAgenda() {
     }
 
     container.appendChild(card);
+
   });
 
   qtd.innerText = `${disponiveis} horários disponíveis`;

@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
         conteudo.innerHTML = dashboard;
 
         setTimeout(() => {
-          configurarLogoutCard(); 
+          configurarLogoutCard();
         }, 0);
 
         return;
@@ -350,6 +350,12 @@ function verificarAgenda() {
       texto = "Horário de almoço";
     }
 
+    const alunoLogado =
+      (localStorage.getItem("nomeCompletoUsuario") || "")
+        .toLowerCase()
+        .trim();
+
+    // qualquer aula no horário
     const aulaExistente = dados.aulas.find(a => {
       return (
         getBlocoAula(a.hora).includes(hora) &&
@@ -357,16 +363,20 @@ function verificarAgenda() {
       );
     });
 
+    // somente aula do aluno logado
+    const minhaAula = dados.aulas.find(a => {
+      return (
+        getBlocoAula(a.hora).includes(hora) &&
+        a.tipo === tipoSelecionado &&
+        (a.aluno || "").toLowerCase().trim() === alunoLogado
+      );
+    });
+
     if (aulaExistente) {
       classe = "indisponivel";
-      texto = "Em aula";
+      texto = "Horário indisponível";
       tag = aulaExistente.status || "Agendado";
       local = aulaExistente.local;
-    }
-
-    if (dados.aulas.some(a => a.tipo === tipoSelecionado) && classe === "disponivel") {
-      classe = "indisponivel";
-      texto = "Limite de 1 aula atingido";
     }
 
     if (classe === "disponivel") {
@@ -386,11 +396,11 @@ function verificarAgenda() {
           <span class="status">${texto}</span>
         </div>
 
-        ${tag ? `
+        ${minhaAula ? `
           <div class="acoes">
             <span class="tag-agendado">${tag}</span>
 
-            ${aulaExistente?.statusCancelamento === "pendente"
+            ${minhaAula?.statusCancelamento === "pendente"
           ? `<button class="btn-cancelar" disabled>Solicitação enviada</button>`
           : `<button class="btn-cancelar">Solicitar Cancelamento</button>`
         }
@@ -406,7 +416,13 @@ function verificarAgenda() {
       card.style.cursor = "pointer";
 
       card.onclick = () => {
-        if (dados.aulas.some(a => a.tipo === tipoSelecionado)) {
+
+        const jaTemAula = dados.aulas.some(a =>
+          a.tipo === tipoSelecionado &&
+          (a.aluno || "").toLowerCase().trim() === alunoLogado
+        );
+
+        if (jaTemAula) {
           alert("Você já possui uma aula deste tipo neste dia.");
           return;
         }
@@ -443,7 +459,7 @@ function verificarAgenda() {
     // SOLICITAR CANCELAMENTO
     const btn = card.querySelector(".btn-cancelar");
 
-    if (btn && !btn.disabled) {
+    if (btn && minhaAula && !btn.disabled) {
       btn.onclick = (e) => {
         e.stopPropagation();
 
