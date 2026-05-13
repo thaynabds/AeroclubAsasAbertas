@@ -101,6 +101,7 @@ Este projeto foi uma experiência incrível de aprendizado, trabalho em equipe e
 ## Licença
 
 Este projeto foi desenvolvido para fins educacionais e de prototipagem no programa RiseUp.
+Copyright © 2026, Integrantes da Squad 43 do Rise Up; —  Sistema de Gerenciamento Aeroclube Asas Abertas🛩️. Todos os direitos reservados.
 
 ---
 
