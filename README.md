@@ -57,6 +57,12 @@ A plataforma proposta digitaliza e automatiza regras operacionais para reduzir e
 
 ### QR Code / Acesso rápido ao protótipo
 ![QR Code do protótipo](https://raw.githubusercontent.com/thaynabds/AeroclubAsasAbertas/refs/heads/main/Squad%20e%20Prot%C3%B3tipo.png)
+Protótipo Funcional do sistema de Gestão de Aulas do Aeroclub Asas Abertas HTML, CSS e JavaScript: [https://asasabertas-aero-clube.vercel.app/](https://asasabertas-aero-clube.vercel.app/)
+
+Para acessar o site:
+
+- **E-mail:** `dashboardgeneral`
+- **Senha:** `*_aeroClube@`
 
 ---
 
@@ -260,7 +266,14 @@ The proposed platform digitizes and automates operational rules to reduce errors
 
 ### QR Code / Quick Access
 ![Prototype QR Code](https://raw.githubusercontent.com/thaynabds/AeroclubAsasAbertas/refs/heads/main/Squad%20e%20Prot%C3%B3tipo.png)
+### QR Code / Quick Access to the Prototype
 
+Functional prototype of the Aeroclub Asas Abertas lesson management system, built with HTML, CSS, and JavaScript: [https://asasabertas-aero-clube.vercel.app/](https://asasabertas-aero-clube.vercel.app/)
+
+To access the site:
+
+- **Email:** `dashboardgeneral`
+- **Password:** `*_aeroClube@`
 ---
 
 ## 🌍 ESG Impact
