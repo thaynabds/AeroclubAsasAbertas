@@ -180,6 +180,13 @@ cd AeroclubAsasAbertas
 
 ---
 
+## 📄 License
+
+**Copyright © 2026, Membros do Esquadrão 43 do Rise Up; — Sistema de Gestão do Aeroclube Asas Abertas🛩️. Todos os direitos reservados.** 🔒
+**Obrigado pela visita! ⭐ Não se esqueça de dar uma estrela ao projeto se gostou!** 🌟
+
+---
+
 ## 📬 Contato
 
 <div align="center">
@@ -390,6 +397,13 @@ cd AeroclubAsasAbertas
 
 ---
 
+## 📄 License
+
+**Copyright © 2026, Members of Squad 43 of Rise Up; — Asas Abertas Aeroclub Management System🛩️. All rights reserved.** 🔒
+**Thank you for visiting! ⭐ Don't forget to star the project if you liked it!** 🌟
+
+---
+
 ## 📬 Contact
 
 <div align="center">
@@ -412,3 +426,9 @@ cd AeroclubAsasAbertas
 ![TEC Card Thayná](https://github.com/thaynabds/AppMedSmart/blob/main/CapaCartão%20ThaynáBDSTEC.png)
 
 </div>
+
+---
+
+<div align="center">
+**Copyright © 2026, Members of Squad 43 of Rise Up; — Asas Abertas Aeroclub Management System 🛩️. All rights reserved.**
+**Thank you for visiting! ⭐ Don't forget to star the project if you liked it!** 🌟
