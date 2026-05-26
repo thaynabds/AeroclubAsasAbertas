@@ -187,7 +187,9 @@ cd AeroclubAsasAbertas
 
 ---
 
-## 📬 Contato
+## 📞 Contato 📬
+
+Quer saber mais sobre o projeto ou entrar em contato? 🤝
 
 <div align="center">
 
@@ -201,12 +203,20 @@ cd AeroclubAsasAbertas
 
 </div>
 
-📧 E-mail: [thaynabdstec@gmail.com](mailto:thaynabdstec@gmail.com)  
-📱 Telefone: +55 (81) 97912-6121
+📧 **Email:** [thaynabdstec@gmail.com](mailto:thaynabdstec@gmail.com) ✉️
+
+📱 **Phone:** +55 (81) 97912-6121 📞
+
+---
 
 <div align="center">
 
-![Cartão TEC Thayná](https://github.com/thaynabds/AppMedSmart/blob/main/CapaCartão%20ThaynáBDSTEC.png)
+### 👤 Thayná Batista da Silva
+**Scrum Master • Product Designer • Requirements Analyst** 💼
+
+Senac Recife-PE Faculty | Systems Analysis and Development 🎓
+
+![TEC Card Thayná](https://github.com/thaynabds/AppMedSmart/blob/main/CapaCartão%20ThaynáBDSTEC.png)
 
 </div>
 
@@ -404,7 +414,9 @@ cd AeroclubAsasAbertas
 
 ---
 
-## 📬 Contact
+## 📞 Contact 📬
+
+Want to learn more about the project or get in touch? 🤝
 
 <div align="center">
 
@@ -418,12 +430,31 @@ cd AeroclubAsasAbertas
 
 </div>
 
-📧 Email: [thaynabdstec@gmail.com](mailto:thaynabdstec@gmail.com)  
-📱 Phone: +55 (81) 97912-6121
+📧 **Email:** [thaynabdstec@gmail.com](mailto:thaynabdstec@gmail.com) ✉️
+
+📱 **Phone:** +55 (81) 97912-6121 📞
+
+---
 
 <div align="center">
 
+### 👤 Thayná Batista da Silva
+**Scrum Master • Product Designer • Requirements Analyst** 💼
+
+Senac Recife-PE Faculty | Systems Analysis and Development 🎓
+
 ![TEC Card Thayná](https://github.com/thaynabds/AppMedSmart/blob/main/CapaCartão%20ThaynáBDSTEC.png)
+
+</div>
+
+---
+
+<div align="center">
+
+**Thank you for visiting! ⭐ Don't forget to star the project if you liked it!** 🌟
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://br.linkedin.com/in/thaynabds)
+[![Instagram](https://img.shields.io/badge/Instagram-Follow-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/thaynabdstec/)
 
 </div>
 
