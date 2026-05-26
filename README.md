@@ -199,7 +199,7 @@ cd AeroclubAsasAbertas
 
 <div align="center">
 
-![Cartão TEC Thayná](https://raw.githubusercontent.com/thaynabds/AppMedSmart/refs/heads/main/Cart%C3%A3o%20TEC%20Thayn%C3%A1%20Batista%20da%20Silva.png)
+![Cartão TEC Thayná](https://github.com/thaynabds/AppMedSmart/blob/main/CapaCartão%20ThaynáBDSTEC.png)
 
 </div>
 
@@ -409,6 +409,6 @@ cd AeroclubAsasAbertas
 
 <div align="center">
 
-![TEC Card Thayná](https://raw.githubusercontent.com/thaynabds/AppMedSmart/refs/heads/main/Cart%C3%A3o%20TEC%20Thayn%C3%A1%20Batista%20da%20Silva.png)
+![TEC Card Thayná](https://github.com/thaynabds/AppMedSmart/blob/main/CapaCartão%20ThaynáBDSTEC.png)
 
 </div>
