@@ -8,21 +8,47 @@ Plataforma web que digitaliza a gestão administrativa do Aeroclube Asas Abertas
 
 ---
 
+## 📑 Índice
+
+- [🎯 Problema](#-problema)
+- [✅ A Solução](#-a-solução)
+- [🖼️ Protótipos](#️-protótipos)
+- [🌍 Impacto ESG](#-impacto-esg)
+- [📈 Mercado](#-mercado)
+- [💼 Modelo de Negócio](#-modelo-de-negócio)
+- [🧾 Análise de Custo e Viabilidade](#-análise-de-custo-e-viabilidade)
+- [🎯 Público-Alvo](#-público-alvo)
+- [🛠️ Tecnologias Utilizadas](#️-tecnologias-utilizadas)
+- [🚀 Como Executar Localmente](#-como-executar-localmente)
+- [👥 Equipe — Squad 43](#-equipe--squad-43)
+- [📋 Documentação Técnica](#-documentação-técnica)
+  - [1. Definição do Problema](#1-definição-do-problema)
+  - [2. Backlog e Engenharia de Requisitos](#2-backlog-e-engenharia-de-requisitos)
+  - [3. UX/UI para Interfaces Inteligentes](#3-uxui-para-interfaces-inteligentes)
+  - [4. Arquitetura de Software e Stack de Desenvolvimento](#4-arquitetura-de-software-e-stack-de-desenvolvimento)
+  - [5. Relato do Processo e Engenharia de Prompt](#5-relato-do-processo-e-engenharia-de-prompt)
+  - [6. Análise de Custos e Viabilidade](#6-análise-de-custos-e-viabilidade)
+  - [7. Evoluções Futuras](#7-evoluções-futuras)
+- [📽️ Demonstrações](#️-demonstrações)
+- [📄 Licença](#-licença)
+- [📞 Contato](#-contato)
+
+---
+
 ## 🎯 Problema
 
-O Aeroclube Asas Abertas gerenciava alunos, professores e agendamentos de voo de forma manual — papéis e planilhas.  
-Sem controle digital, surgiam conflitos de horário, informações perdidas e falhas de comunicação que comprometem a operação e a segurança de voo.
+O Aeroclube Asas Abertas gerenciava alunos, professores e agendamentos de voo de forma manual — papéis e planilhas. Sem controle digital, surgiam conflitos de horário, informações perdidas e falhas de comunicação que comprometem a operação e a segurança de voo.
 
 Problemas relatados:
-- Dois alunos reservam o mesmo instrutor ou aeronave no mesmo horário; ✖️  
-- Rasuras e folhas extraviadas impedem rastrear cancelamentos e presenças; 🗂️  
-- Cobranças duplicadas e pagamentos não registrados geram prejuízo financeiro; 💸  
-- Descontos aplicados errado causam desgaste com o aluno; ⚠️  
-- Aeronaves alugadas duas vezes para o mesmo horário, descoberto só na pista; 🛬  
-- Professor comparece sem aluno por falha de comunicação; 📣  
-- Aluno chega e descobre a aeronave em manutenção sem aviso prévio; 🔧  
+- Dois alunos reservam o mesmo instrutor ou aeronave no mesmo horário ✖️
+- Rasuras e folhas extraviadas impedem rastrear cancelamentos e presenças 🗂️
+- Cobranças duplicadas e pagamentos não registrados geram prejuízo financeiro 💸
+- Descontos aplicados errado causam desgaste com o aluno ⚠️
+- Aeronaves alugadas duas vezes para o mesmo horário, descoberto só na pista 🛬
+- Professor comparece sem aluno por falha de comunicação 📣
+- Aluno chega e descobre a aeronave em manutenção sem aviso prévio 🔧
 
-Em aviação, falha de informação vai além do administrativo — compromete a **segurança**.
+> Em aviação, falha de informação vai além do administrativo — compromete a **segurança**.
 
 ![Problema](https://raw.githubusercontent.com/thaynabds/AeroclubAsasAbertas/refs/heads/main/Problema.png)
 ![Problema 2](https://github.com/thaynabds/AeroclubAsasAbertas/blob/main/O%20Problema%202.png)
@@ -33,19 +59,21 @@ Em aviação, falha de informação vai além do administrativo — compromete a
 
 A plataforma proposta digitaliza e automatiza regras operacionais para reduzir erros e aumentar a segurança:
 
-- Agendamentos digitais eliminam conflitos de horário 🔁  
-- Controle de acesso por perfil protege os dados 🔐  
-- Diário digital registra presenças, notas e conteúdo 📘  
-- Aluno acompanha seu histórico em tempo real 📊  
-- Sistema bloqueia cancelamentos fora do prazo ⏳  
-- Inadimplentes são impedidos de agendar aulas 🚫  
-- Alunos sem CMA são bloqueados automaticamente 🛡️  
-- Cadastro centralizado substitui planilhas isoladas 🗃️  
-- Painel inicial reúne métricas e agendamentos 🎛️  
-- Histórico de aulas acessível a qualquer momento 📚  
-- Professor aprova ou reprova cancelamentos registrados ✅  
-- Cores indicam disponibilidade de horários na agenda 🎨  
+- Agendamentos digitais eliminam conflitos de horário 🔁
+- Controle de acesso por perfil protege os dados 🔐
+- Diário digital registra presenças, notas e conteúdo 📘
+- Aluno acompanha seu histórico em tempo real 📊
+- Sistema bloqueia cancelamentos fora do prazo ⏳
+- Inadimplentes são impedidos de agendar aulas 🚫
+- Alunos sem CMA são bloqueados automaticamente 🛡️
+- Cadastro centralizado substitui planilhas isoladas 🗃️
+- Painel inicial reúne métricas e agendamentos 🎛️
+- Histórico de aulas acessível a qualquer momento 📚
+- Professor aprova ou reprova cancelamentos registrados ✅
+- Cores indicam disponibilidade de horários na agenda 🎨
+
 ![A Solução](https://github.com/thaynabds/AeroclubAsasAbertas/blob/main/Solução.png)
+
 ---
 
 ## 🖼️ Protótipos
@@ -59,10 +87,9 @@ A plataforma proposta digitaliza e automatiza regras operacionais para reduzir e
 ### QR Code / Acesso rápido ao protótipo
 ![QR Code do protótipo](https://raw.githubusercontent.com/thaynabds/AeroclubAsasAbertas/refs/heads/main/Squad%20e%20Prot%C3%B3tipo.png)
 
-Protótipo Funcional do sistema de Gestão de Aulas do Aeroclub Asas Abertas HTML, CSS e JavaScript: [https://asasabertas-aero-clube.vercel.app/](https://asasabertas-aero-clube.vercel.app/)
+Protótipo Funcional — HTML, CSS e JavaScript: [https://asasabertas-aero-clube.vercel.app/](https://asasabertas-aero-clube.vercel.app/)
 
 Para acessar o site:
-
 - **E-mail:** `dashboardgeneral`
 - **Senha:** `*_aeroClube@`
 
@@ -70,27 +97,26 @@ Para acessar o site:
 
 ## 🌍 Impacto ESG
 
-### **E – Environmental**
-- Eliminação do uso de papel na gestão administrativa. 🌱
+### E – Environmental 🌱
+Eliminação do uso de papel na gestão administrativa.
 
-### **S – Social**
-- Digitalização de escola de aviação civil, ampliando acesso organizado à formação de pilotos. 👥
+### S – Social 👥
+Digitalização de escola de aviação civil, ampliando acesso organizado à formação de pilotos.
 
-### **G – Governance**
-- Digitalização com rastreabilidade, padronização e controle de dados, apoiando compliance e segurança operacional. 📋
+### G – Governance 📋
+Digitalização com rastreabilidade, padronização e controle de dados, apoiando compliance e segurança operacional.
+
 ![Impacto ESG](https://github.com/thaynabds/AeroclubAsasAbertas/blob/main/Impacto%20ESG.png)
 
 ---
 
 ## 📈 Mercado
 
-**Organização é Prioridade!**  
-Aeroclubes e escolas de aviação civil no Brasil enfrentam crescimento da demanda por pilotos civis e necessidade crescente de digitalização operacional.
+**Organização é Prioridade!**
 
-Contexto: regulamentação da ANAC e exigências do Ministério da Aeronáutica criam obrigações de registro que sistemas manuais não suportam com segurança.
+Aeroclubes e escolas de aviação civil no Brasil enfrentam crescimento da demanda por pilotos civis e necessidade crescente de digitalização operacional. A regulamentação da ANAC e as exigências do Ministério da Aeronáutica criam obrigações de registro que sistemas manuais não suportam com segurança.
 
-**Benchmark:** o projeto não apresenta benchmark formal.  
-Como referência implícita, o sistema foi validado com usuários reais do Aeroclube Coroa do Avião (PE), que opera com as mesmas dores. Sistemas similares existem em escolas de aviação de grande porte, mas são inacessíveis ou inapropriados para aeroclubes de médio porte.
+O sistema foi validado com usuários reais do Aeroclube Coroa do Avião (PE), que opera com as mesmas dores. Sistemas similares existem em escolas de aviação de grande porte, mas são inacessíveis ou inapropriados para aeroclubes de médio porte.
 
 ![Mercado](https://github.com/thaynabds/AeroclubAsasAbertas/blob/main/Mercado.png)
 
@@ -98,11 +124,11 @@ Como referência implícita, o sistema foi validado com usuários reais do Aeroc
 
 ## 💼 Modelo de Negócio
 
-Protótipo desenvolvido como projeto acadêmico em parceria com a NTTData via Residência em Software & Inteligência Artificial (Porto Digital / Faculdade Senac Recife-PE).
+Protótipo desenvolvido como projeto acadêmico via NTTDATA | Residência em Software & Inteligência Artificial (Porto Digital / Faculdade Senac Recife-PE).
 
 O modelo de negócio futuro pressupõe licenciamento da plataforma para aeroclubes, com backend, banco de dados e módulos financeiro, de manutenção e documentos ainda em desenvolvimento.
 
-**Digitalizar Evita Conflito e Perda de Informação** ✈️
+> ✈️ **Digitalizar Evita Conflito e Perda de Informação**
 
 ![Modelo de Negócios](https://raw.githubusercontent.com/thaynabds/AeroclubAsasAbertas/refs/heads/main/Modelo%20de%20Neg%C3%B3cios.png)
 
@@ -110,9 +136,12 @@ O modelo de negócio futuro pressupõe licenciamento da plataforma para aeroclub
 
 ## 🧾 Análise de Custo e Viabilidade
 
-- **220 horas totais**
-- **Custo total:** R$ 4.700,00
-- **Prazo estimado:** aproximadamente 12 semanas
+| Item | Valor |
+|------|-------|
+| 11 integrantes × 20h × R$ 20,00/h | R$ 4.400,00 |
+| Custos operacionais (internet e energia) | R$ 300,00 |
+| **Total estimado** | **R$ 4.700,00** |
+| **Prazo estimado** | **~12 semanas** |
 
 ![Análise de Custo e Viabilidade](https://raw.githubusercontent.com/thaynabds/AeroclubAsasAbertas/refs/heads/main/An%C3%A1lise%20de%20Custo%20e%20Viabilidade.png)
 
@@ -120,10 +149,10 @@ O modelo de negócio futuro pressupõe licenciamento da plataforma para aeroclub
 
 ## 🎯 Público-Alvo
 
-- Alunos aspirantes a pilotos, por exemplo, Piloto Privado de Avião ✈️  
-- Instrutores de voo habilitados 👨‍✈️  
-- Administradores de aeroclubes 🧑‍💼  
-- Gestores de manutenção e operações 🔧  
+- Alunos aspirantes a pilotos (ex.: Piloto Privado de Avião) ✈️
+- Instrutores de voo habilitados 👨‍✈️
+- Administradores de aeroclubes 🧑‍💼
+- Gestores de manutenção e operações 🔧
 
 ![Público-Alvo](https://github.com/thaynabds/AeroclubAsasAbertas/blob/main/Público%20Alvo.png)
 
@@ -131,31 +160,33 @@ O modelo de negócio futuro pressupõe licenciamento da plataforma para aeroclub
 
 ## 🛠️ Tecnologias Utilizadas
 
-- 💻 **HTML5**
-- 🎨 **CSS3**
-- 🧠 **JavaScript**
-- 🖥️ **Figma**
-- 🚀 **Vercel**
-- 📅 **Scrum**
-- 🤝 **NTTDATA via Residência em Software & Inteligência Artificial em parceria com a Faculdade Senac Recife-PE no Rise Up do Porto Digital.**
+| Tecnologia | Uso |
+|------------|-----|
+| HTML5 | Estrutura e marcação semântica |
+| CSS3 | Estilização, responsividade e identidade visual |
+| JavaScript | Lógica de interação e validação de formulários |
+| Figma | Prototipagem visual das telas |
+| Vercel | Hospedagem do protótipo |
+| Scrum | Metodologia ágil de desenvolvimento |
+| GitHub | Versionamento de código |
+
+> 🤝 **NTTDATA via Residência em Software & Inteligência Artificial em parceria com a Faculdade Senac Recife-PE no Rise Up do Porto Digital.**
 
 ---
 
 ## 🚀 Como Executar Localmente
 
-1. Clone o repositório:
 ```bash
+# 1. Clone o repositório
 git clone https://github.com/thaynabds/AeroclubAsasAbertas.git
-```
 
-2. Acesse a pasta do projeto:
-```bash
+# 2. Acesse a pasta do projeto
 cd AeroclubAsasAbertas
+
+# 3. Abra o arquivo index.html no navegador
 ```
 
-3. Abra o arquivo `index.html` no navegador.
-
-**Observação:** projeto 100% frontend, sem necessidade de backend.
+> **Observação:** projeto 100% frontend, sem necessidade de backend ou configuração de ambiente.
 
 ---
 
@@ -164,22 +195,21 @@ cd AeroclubAsasAbertas
 ### Atribuições da Equipe
 
 ![Atribuições 1](https://github.com/thaynabds/AeroclubAsasAbertas/blob/main/Atribuições.png)
-
 ![Atribuições 2](https://github.com/thaynabds/AeroclubAsasAbertas/blob/main/Atribuições%202.png)
 
 | Nome | Função / Responsabilidades |
 |------|---------------------------|
 | **Thayná Batista da Silva** | Scrum Master · Análise de Requisitos · Product Designer · Design e Prototipação (Figma) |
-| Henrique Nascimento Vasco Alves | Líder de Teste do sistema; Relatos de Inteligência Artificial; Análise de custo e de viabilidade |
-| James Bernardino Da Silva Neto | Responsividade do menu lateral; Relatos de Inteligência Artificial; Análise de custo e de viabilidade |
-| Pedro Henrique Marques da Silva | Responsividade geral de todo o site; Front-End (HTML, CSS e JavaScript); Relatos de Inteligência Artificial; Análise de custo e de viabilidade |
-| Pedro Lucas de Souza Pessoa | Líder de Programação Front-End: HTML, CSS e JavaScript; Repositório do código do sistema; Relatos de Inteligência Artificial; Análise de custo e de viabilidade; Líder de Regras de Negócio |
-| Pedro Ruan Verissimo da Costa | Front-End (HTML, CSS e JavaScript); Relatos de Inteligência Artificial; Análise de custo e de viabilidade |
-| Silvoney Felipe Bernardino | Auxílio da Pesquisa e Documentação; Revisão da documentação; Líder de Documentação: Formatação e organização de documentação; Relatos de Inteligência Artificial |
-| Sophia Maria Lima da Costa | Produção da Documentação; Revisão da documentação; Pesquisa de Tipografia e esquema de cores para o sistema; Relatos de Inteligência Artificial; Regras de negócio |
-| Suelen Bezerra Alves dos Santos | Relatos de Inteligência Artificial; Produção da Documentação; Desenvolvimento; Responsividade do site; Líder de Análise de custo e de viabilidade |
-| Tatiana Cristina Nunes Bezerra | Líder de Pesquisa; Aplicação e Produção do Questionário de pesquisa; Pesquisa de casos e de Requisitos; Personas; Trilha inicial; Comparativos de funcionalidades web x mobile; Relatos de Inteligência Artificial |
-| Vicente de Paula Gomes da Silva Junior | Prototipagem inicial de baixa fidelidade no Figma; Trilha inicial; Levantamento dos Requisitos Funcionais e Não Funcionais; Regras de negócios; Líder de Criação de Fluxo de telas; Participação na Documentação; Teste do sistema pronto |
+| Henrique Nascimento Vasco Alves | Líder de Teste do sistema · Relatos de IA · Análise de custo e viabilidade |
+| James Bernardino Da Silva Neto | Responsividade do menu lateral · Relatos de IA · Análise de custo e viabilidade |
+| Pedro Henrique Marques da Silva | Responsividade geral do site · Front-End (HTML, CSS e JS) · Relatos de IA · Análise de custo e viabilidade |
+| Pedro Lucas de Souza Pessoa | Líder de Programação Front-End · Repositório do código · Relatos de IA · Líder de Regras de Negócio |
+| Pedro Ruan Verissimo da Costa | Front-End (HTML, CSS e JS) · Relatos de IA · Análise de custo e viabilidade |
+| Silvoney Felipe Bernardino | Auxílio de Pesquisa · Revisão da documentação · Líder de Documentação · Relatos de IA |
+| Sophia Maria Lima da Costa | Produção e revisão da documentação · Pesquisa de tipografia e cores · Relatos de IA · Regras de negócio |
+| Suelen Bezerra Alves dos Santos | Relatos de IA · Produção da documentação · Desenvolvimento · Responsividade · Líder de Análise de custo |
+| Tatiana Cristina Nunes Bezerra | Líder de Pesquisa · Questionário · Requisitos · Personas · Trilha inicial · Comparativos web x mobile · Relatos de IA |
+| Vicente de Paula Gomes da Silva Junior | Prototipagem Figma · Trilha inicial · Requisitos Funcionais e Não Funcionais · Regras de negócio · Líder de Fluxo de telas · Documentação · Teste do sistema |
 
 ---
 
@@ -187,84 +217,83 @@ cd AeroclubAsasAbertas
 
 ### 1. Definição do Problema
 
-O Aeroclube Asas Abertas enfrenta sérias dificuldades com a gestão manual de dados administrativos e operacionais. Com o crescimento do número de alunos e sócios, o controle baseado em papéis e planilhas tornou-se ineficiente, gerando erros, riscos à segurança de voo e prejuízos financeiros.
+O Aeroclube Asas Abertas enfrenta dificuldades com a gestão manual de dados administrativos e operacionais. Com o crescimento do número de alunos e sócios, o controle baseado em papéis e planilhas tornou-se ineficiente, gerando erros, riscos à segurança de voo e prejuízos financeiros.
 
-**Síntese do Problema:** Gestão manual de dados no aeroclube gera erros, riscos e prejuízos. Com mais sócios e alunos, planilhas e papéis causam desorganização, dificultando controle em tempo real.
+**Síntese:** Gestão manual de dados no aeroclube gera erros, riscos e prejuízos. Com mais sócios e alunos, planilhas e papéis causam desorganização, dificultando controle em tempo real.
 
-#### Pontos Críticos Identificados e Abordados pelo Sistema
+#### Pontos Críticos Abordados pelo Sistema
 
-- **Ausência de registro digital de aulas:** O sistema resolve isso com o Diário do Professor (registro completo de cada aula) e o Diário do Aluno (visualização somente leitura, filtrada por tipo de serviço).
-- **Falta de controle de acesso por perfil de usuário:** O sistema implementa login por e-mail e senha com perfis distintos — aluno, professor e administrador de cadastro.
-- **Dificuldade no agendamento de aulas e serviços:** A Agenda programada permite ao aluno visualizar horários disponíveis, agendar por data, tipo de serviço (Aula Teórica, Aula Prática/Voo, Simulador ou Aluguel de Aeronave) e instrutor/aeronave (opcional), além de solicitar cancelamentos com até 3 dias de antecedência.
-- **Inexistência de cadastro centralizado de alunos e professores:** A tela de Cadastro centraliza o registro de alunos (dados pessoais, documentação aeronáutica, CMA e contato de emergência) e professores (habilitações, número de licença, horas de voo e especializações).
-- **Falta de visão geral para o usuário logado:** O Painel Inicial (Home) exibe cards de navegação para todos os módulos do sistema, além de cards com número de voos do mês, horas de voo, alunos ativos e os próximos agendamentos do usuário logado.
+- **Ausência de registro digital de aulas:** resolvido com o Diário do Professor (registro completo) e o Diário do Aluno (leitura filtrada por tipo de serviço).
+- **Falta de controle de acesso por perfil:** login por e-mail e senha com perfis distintos — aluno, professor e administrador.
+- **Dificuldade no agendamento:** Agenda com visualização de horários, seleção de tipo de serviço (Aula Teórica, Aula Prática/Voo, Simulador ou Aluguel de Aeronave) e cancelamentos com até 3 dias de antecedência.
+- **Ausência de cadastro centralizado:** tela de Cadastro unifica dados pessoais, documentação aeronáutica, CMA, licenças e especializações.
+- **Falta de visão geral:** Painel Inicial (Home) com métricas de voos do mês, horas de voo, alunos ativos e próximos agendamentos.
 
-### 1.2 Solução Proposta
+#### 1.2 Solução Proposta
 
-A solução entregue é uma plataforma web front-end, desenvolvida em HTML, CSS3 e JavaScript, sem banco de dados, focada nas funcionalidades principais solicitadas pela empresa NTTData para o Aeroclube Asas Abertas de Pernambuco.
+Plataforma web front-end em HTML, CSS3 e JavaScript, focada nas funcionalidades solicitadas pela NTTData para o Aeroclube Asas Abertas de Pernambuco. O sistema centraliza cadastros, agendamentos e o histórico de aulas por perfil de usuário.
 
-**Síntese da Solução:** Plataforma web centralizada para o Aeroclube Asas Abertas, integrando cadastro, agendamento de aulas, diário do aluno e professor, controle financeiro e documentos, eliminando a gestão manual.
+**Telas funcionais entregues:**
 
-#### Telas Funcionais Entregues no Protótipo
+| Tela | Descrição |
+|------|-----------|
+| Login | E-mail, senha, 'Lembrar-me' e link para cadastro |
+| Home | Cards de métricas, navegação e próximos agendamentos |
+| Agenda | Busca por data/tipo de serviço, legenda de cores e agendamento |
+| Diário do Professor | Registro completo de aulas, notas, coeficiente de rendimento e observações |
+| Diário do Aluno | Visualização somente leitura, filtrada por tipo de serviço |
+| Cadastro | Abas separadas para aluno e professor, acesso exclusivo pelo administrador |
 
-- **Tela de Login:** entrada por e-mail e senha, opção 'Lembrar-me' e link 'Cadastrar Aluno ou Professor'.
-- **Painel Inicial (Home):** cards de métricas (voos do mês, horas de voo, alunos ativos), cards de navegação e agendamentos do usuário logado.
-- **Agenda (Agendamentos):** seleção de data, horário opcional, tipo de serviço e instrutor/aeronave opcional. Exibe horários disponíveis com legenda de cores.
-- **Diário do Professor:** pesquisa por aluno; registro de aulas com Nota (0–10), Coeficiente de Rendimento, Conteúdo da Aula, Descrição e Observações.
-- **Diário do Aluno:** visualização somente leitura das próprias aulas, filtrada por tipo de serviço.
-- **Tela de Cadastro de Aluno e Professor:** acesso pelo link na tela de login; abas separadas para cada perfil.
+**Telas em construção:** Cronograma de Aulas Teóricas, Histórico de Voos, Manutenção, Documentos, Financeiro, Extrato e Treinamentos.
 
-#### Telas em Construção
+#### 1.3 Onde a IA Gera Valor
 
-Cronograma de Aulas Teóricas (Ementa), Histórico de Voos, Manutenção, Documentos, Financeiro, Extrato do Aluno, Extrato do Professor e Treinamentos.
+| Dimensão | Aplicação |
+|----------|-----------|
+| Automação | Cadastro automático, organização de dados e atualização de status |
+| Predição | Previsão de demanda de aulas, manutenção preventiva e risco de inadimplência |
+| Geração de Conteúdo | Relatórios automáticos, alertas de vencimento de documentos e análises de desempenho |
 
-### 1.3 Onde a IA Gera Valor
+**IA no desenvolvimento do projeto:**
+- Definição dos campos dos formulários de cadastro com base em práticas reais de escolas de aviação
+- Levantamento dos dados necessários para a agenda de agendamentos
+- Geração de imagem temática via Gemini (Nano Banana) para telas em construção
+- Auxílio na produção da documentação e estruturação do backlog
 
-A Inteligência Artificial é aplicada de forma estratégica em três dimensões do sistema:
+#### 1.4 Personas
 
-- **Automação:** cadastro automático, organização de dados e atualização de status de alunos e aeronaves.
-- **Predição:** previsão de demanda de aulas, manutenção preventiva de aeronaves e identificação de risco de inadimplência.
-- **Geração de Conteúdo:** criação de relatórios automáticos, alertas de vencimento de documentos e análises de desempenho dos alunos.
+**Persona 1 — Lucas, 22 anos | Aluno Aspirante a Piloto Privado (PP – Avião)**
 
-#### Uso de IA no Desenvolvimento do Projeto
+| | |
+|-|-|
+| **Perfil** | Jovem buscando sua primeira licença de Piloto Privado. Sem experiência prévia em aviação formal. |
+| **Objetivo** | Concluir o curso de PP-Avião, acumular horas de voo e obter o brevet. |
+| **Necessidades** | Agendar aulas práticas, conferir horários, consultar aprovação em avaliações e conteúdo ministrado. |
+| **Atenção** | Deve manter pagamentos em dia e entregar documentos obrigatórios para não ser bloqueado das aulas. |
 
-- Definição dos campos do formulário de cadastro de alunos e professores, com base em práticas reais de escolas de aviação.
-- Levantamento dos dados necessários para a agenda de agendamentos de uma escola de pilotagem.
-- Geração de imagem temática de aviação pela IA Gemini (Nano Banana) para uso nas telas em construção do protótipo.
-- Auxílio na produção da documentação via Google Docs e estruturação do backlog do projeto.
+**Persona 2 — Juliana, 34 anos | Instrutora de Voo Habilitada**
 
-### 1.4 Personas
+| | |
+|-|-|
+| **Perfil** | Piloto habilitada que ministra aulas teóricas e práticas, acompanha o progresso dos alunos e gerencia registros de missão. |
+| **Objetivo** | Registrar aulas com eficiência, acompanhar a evolução dos alunos e gerenciar sua agenda mensal. |
+| **Necessidades** | Informar disponibilidade, registrar tempo de voo, ocorrências, presença/ausência, nota e conteúdo; aprovar ou reprovar cancelamentos. |
 
-#### Persona 1 – O Aluno Aspirante
+#### 1.5 Casos de Borda (Edge Cases) de IA
 
-**Lucas, 22 anos – Aluno Aspirante a Piloto Privado (PP – Avião)**
+| Cenário | Impacto |
+|---------|---------|
+| Perda de dados | Falha no sistema pode causar perda de registros de aulas e agendamentos |
+| Erro no controle financeiro | Cobranças duplicadas ou desconto incorreto (15% à vista) geram prejuízos |
+| Conflito de agendamento | Sem sincronização em tempo real, há risco de sobreposição de recursos |
+| Aluno inadimplente | Falha na validação financeira pode violar a regra de negócio |
+| Cancelamento fora do prazo | O sistema bloqueia e informa a regra dos 3 dias de antecedência |
+| IA com baixa precisão | Previsões abaixo de 70% de acerto devem acionar supervisão humana |
+| Documento vencido / não entregue | Aluno sem CMA é bloqueado automaticamente |
 
-- **Perfil:** Jovem buscando sua primeira licença de Piloto Privado de Avião. Sem experiência prévia em aviação formal.
-- **Objetivo principal:** Concluir o curso de PP-Avião, acumular horas de voo e obter o brevet.
-- **Necessidades:** Agendar aulas práticas, conferir horários, consultar status de aprovação nas avaliações, presença nas aulas e conteúdo ministrado.
-- **Pontos de Atenção:** Deve manter pagamentos em dia e entregar documentos obrigatórios para não ser bloqueado das aulas.
+#### 1.6 Entrevistas e Validação de Hipóteses
 
-#### Persona 2 – O Instrutor de Voo
-
-**Juliana, 34 anos – Instrutora de Voo Habilitada**
-
-- **Perfil:** Piloto habilitado que ministra aulas teóricas e práticas, acompanha o progresso dos alunos e gerencia registros de missão.
-- **Objetivo principal:** Registrar aulas com eficiência, acompanhar a evolução dos alunos e gerenciar sua agenda mensal.
-- **Necessidades:** Informar disponibilidade de horários, registrar tempo de voo, ocorrências, presença/ausência, nota e conteúdo ministrado; aprovar ou reprovar pedidos de cancelamento.
-
-### 1.5 Cenários de Uso e Casos de Borda (Edge Cases) de IA
-
-- **Perda de Dados:** Falha no sistema pode causar perda de registros de aulas e agendamentos.
-- **Erro no Controle Financeiro:** Cobranças duplicadas ou cálculo incorreto de desconto (15% à vista) podem gerar prejuízos.
-- **Conflito de Agendamento:** Sem sincronização em tempo real, há risco de sobreposição de recursos.
-- **Aluno Inadimplente acessando Aulas:** Falha na validação financeira pode violar a regra de negócio.
-- **Cancelamento fora do prazo:** O sistema deve bloquear e informar a regra de 3 dias de antecedência.
-- **IA com Baixa Precisão:** Previsões com taxa de acerto abaixo de 70% devem acionar supervisão humana.
-- **Documento Vencido / Não Entregue:** Aluno sem CMA deve ser bloqueado automaticamente.
-
-### 1.6 Entrevistas e Validação de Hipóteses
-
-Foi realizada entrevista com usuários reais do Aeroclube Coroa do Avião (PE) para validação das necessidades levantadas. O feedback foi organizado por perfil de acesso, cobrindo: aluno e sócio, instrutor e professor, ADM-Manutenção e Estoque, e ADM-Operacional.
+Foi realizada entrevista com usuários reais do Aeroclube Coroa do Avião (PE) para validação das necessidades levantadas. O feedback foi organizado por perfil de acesso: aluno/sócio, instrutor/professor, ADM-Manutenção e Estoque, e ADM-Operacional. A IA (Gemini e ChatGPT) foi utilizada como agente inteligente complementar para validação de hipóteses e levantamento de requisitos.
 
 ---
 
@@ -272,23 +301,25 @@ Foi realizada entrevista com usuários reais do Aeroclube Coroa do Avião (PE) p
 
 #### 2.1 Épicos do Projeto
 
-- **Épico 1** – Autenticação e Cadastro
-- **Épico 2** – Painel Principal (Home)
-- **Épico 3** – Agenda e Agendamentos
-- **Épico 4** – Diário do Professor
-- **Épico 5** – Diário do Aluno
-- **Épico 6** – Telas em Construção
+| Épico | Descrição |
+|-------|-----------|
+| Épico 1 | Autenticação e Cadastro |
+| Épico 2 | Painel Principal (Home) |
+| Épico 3 | Agenda e Agendamentos |
+| Épico 4 | Diário do Professor |
+| Épico 5 | Diário do Aluno |
+| Épico 6 | Telas em Construção |
 
 #### 2.2 Histórias de Usuário
 
-| ID | História |
-|----|----------|
-| HU-01 | Como aluno, desejo consultar meu status de aprovação após o exame do Ministério da Aeronáutica. |
-| HU-02 | Como aluno, desejo agendar minhas aulas teóricas e práticas antecipadamente. |
-| HU-03 | Como aluno, desejo visualizar o registro das minhas aulas com data, hora, presença, nota e conteúdo. |
-| HU-04 | Como instrutor, desejo registrar e modificar informações sobre cada aula realizada. |
-| HU-05 | Como instrutor, desejo gerenciar minha disponibilidade mensal e aprovar ou reprovar pedidos de cancelamento. |
-| HU-06 | Como administrador, desejo cadastrar alunos e professores no sistema. |
+| ID | Perfil | História |
+|----|--------|----------|
+| HU-01 | Aluno | Consultar status de aprovação após o exame do Ministério da Aeronáutica. |
+| HU-02 | Aluno | Agendar aulas teóricas e práticas antecipadamente. |
+| HU-03 | Aluno | Visualizar registro das aulas com data, hora, presença, nota e conteúdo. |
+| HU-04 | Instrutor | Registrar e modificar informações sobre cada aula realizada. |
+| HU-05 | Instrutor | Gerenciar disponibilidade mensal e aprovar/reprovar cancelamentos. |
+| HU-06 | Administrador | Cadastrar alunos e professores no sistema. |
 
 #### 2.3 Requisitos Funcionais
 
@@ -303,7 +334,7 @@ Foi realizada entrevista com usuários reais do Aeroclube Coroa do Avião (PE) p
 | RF07 | Exibir painel principal (Home) com cards de acesso rápido às funcionalidades. |
 | RF08 | Apresentar cards de navegação para módulos (Treinamento, Voos, Documentos, Financeiro, Extrato, Sair). |
 | RF09 | Exibir na Home: número de voos do mês, horas de voo, alunos ativos e próximos agendamentos. |
-| RF10 | Professor pode registrar: nome da aula, data, hora, presença/ausência, nota (0–10), coeficiente de rendimento, conteúdo e observações. |
+| RF10 | Professor registra: nome da aula, data, hora, presença/ausência, nota (0–10), coeficiente de rendimento, conteúdo e observações. |
 | RF11 | Professor pode modificar registros de aulas já criados. |
 | RF12 | Aluno visualiza no Diário: data/hora, matéria, presença, nota, conteúdo e status da aula. |
 | RF13 | Aluno filtra o Diário por tipo de serviço. |
@@ -317,26 +348,24 @@ Foi realizada entrevista com usuários reais do Aeroclube Coroa do Avião (PE) p
 
 | ID | Descrição |
 |----|-----------|
-| RNF01 | Interface intuitiva e de fácil navegação para todos os perfis de usuário. |
-| RNF02 | Uso de cores para representar status de horários (verde=disponível, vermelho=indisponível, amarelo=manutenção, cinza=aguarde). |
+| RNF01 | Interface intuitiva e de fácil navegação para todos os perfis. |
+| RNF02 | Uso de cores para representar status de horários (verde, vermelho, amarelo, cinza). |
 | RNF03 | Minimizar o número de cliques para execução de tarefas frequentes. |
-| RNF04 | Sistema responsivo e adaptável a diferentes tamanhos de tela (desktop e mobile). |
-| RNF05 | Manter consistência visual entre todos os módulos do sistema. |
-| RNF06 | Garantir que não ocorram conflitos de agendamento entre alunos, instrutores e aeronaves. |
-| RNF07 | O aluno logado visualiza apenas informações referentes à sua própria conta. |
-| RNF08 | Telas em construção apresentam mensagem padronizada com imagem temática gerada por IA. |
+| RNF04 | Sistema responsivo para desktop e mobile. |
+| RNF05 | Consistência visual entre todos os módulos do sistema. |
+| RNF06 | Sem conflitos de agendamento entre alunos, instrutores e aeronaves. |
+| RNF07 | O aluno logado visualiza apenas suas próprias informações. |
+| RNF08 | Telas em construção apresentam mensagem padronizada com imagem gerada por IA. |
 
 ---
 
 ### 3. UX/UI para Interfaces Inteligentes
 
-#### 3.1 Visão Geral das Telas
-
-O protótipo foi desenvolvido em HTML, CSS3 e JavaScript, com prototipagem visual prévia no Figma. A identidade visual utiliza a paleta em tons de azul e branco do Aeroclube Asas Abertas, com interface limpa e navegação por menu lateral fixo.
+#### 3.1 Status das Telas
 
 | Tela | Status |
 |------|--------|
-| Tela de Login | ✅ Funcional |
+| Login | ✅ Funcional |
 | Cadastro de Aluno | ✅ Funcional |
 | Cadastro de Professor | ✅ Funcional |
 | Home (Painel Principal) | ✅ Funcional |
@@ -353,7 +382,14 @@ O protótipo foi desenvolvido em HTML, CSS3 e JavaScript, com prototipagem visua
 
 #### 3.2 Detalhamento de Navegação
 
-Menu lateral fixo com as seguintes seções: Início (Home), Agenda, Treinamento, Voos, Documentos, Financeiro, Extrato e Sair.
+Menu lateral fixo (visível após login) com as seções: **Início · Agenda · Treinamento · Voos · Documentos · Financeiro · Extrato · Sair**
+
+#### 3.3 Tratamento de Erros
+
+- Telas em construção exibem imagem temática gerada por IA com indicador de progresso
+- Campos obrigatórios marcados com `*` e validados antes do envio
+- Horários indisponíveis exibidos em vermelho; em manutenção em amarelo
+- Formulários de cadastro possuem botão de retorno ao login
 
 ---
 
@@ -361,32 +397,37 @@ Menu lateral fixo com as seguintes seções: Início (Home), Agenda, Treinamento
 
 #### 4.1 Stack de Desenvolvimento
 
-**Tecnologias Utilizadas no Front-End:**
-- **HTML5:** Estrutura e marcação semântica de todas as telas do sistema.
-- **CSS3:** Estilização visual, responsividade e identidade visual.
-- **JavaScript (Vanilla):** Lógica de interação, validação de formulários, controle de navegação e simulação de dados.
-- **Figma:** Prototipagem visual das telas antes da implementação.
-- **Google Docs / Google Drive:** Produção e armazenamento da documentação do projeto.
-
-**Ferramentas de IA Utilizadas (Gratuitas):**
-- Gemini (Google) – Nano Banana: Geração de imagem temática de aviação para telas em construção.
-- ChatGPT / Gemini (consulta de texto): Levantamento de campos de formulários e estrutura de agenda de escola de pilotagem.
+| Ferramenta | Finalidade | Custo |
+|------------|-----------|-------|
+| HTML5 | Estrutura e marcação semântica | Gratuito |
+| CSS3 | Estilização e responsividade | Gratuito |
+| JavaScript (Vanilla) | Lógica, validação e navegação | Gratuito |
+| Figma | Prototipagem visual | Gratuito |
+| Visual Studio Code | Desenvolvimento do sistema | Gratuito |
+| GitHub | Versionamento de código | Gratuito |
+| Gemini (Google) | Geração de imagem e consultas | Gratuito |
+| ChatGPT / Gemini | Levantamento de requisitos | Gratuito |
+| Google Docs / Drive | Documentação colaborativa | Gratuito |
 
 #### 4.2 Estrutura de Pastas
 
 ```
 AeroclubAsasAbertas/
-├── index.html          # Tela de Login
-├── cadastro.html       # Tela de Cadastro de Aluno e Professor
-├── home.html           # Painel Principal (Home)
-├── agenda.html         # Tela de Agenda e Agendamentos
-├── diario-professor.html
-├── diario-aluno.html
-├── pages/              # Demais telas (em construção)
-├── css/                # style.css, components.css
-├── js/                 # login.js, agenda.js, diario.js
-└── assets/             # Imagens, logo e ícones
+├── index.html              # Tela de Login
+├── cadastro.html           # Cadastro de Aluno e Professor
+├── home.html               # Painel Principal (Home)
+├── agenda.html             # Agenda e Agendamentos
+├── diario-professor.html   # Diário do Professor
+├── diario-aluno.html       # Diário do Aluno
+├── pages/                  # Demais telas (em construção)
+├── css/                    # style.css, components.css
+├── js/                     # login.js, agenda.js, diario.js
+└── assets/                 # Imagens, logo e ícones
 ```
+
+#### 4.3 Integração Frontend e Tratamento de Erros
+
+Como o projeto é exclusivamente front-end sem banco de dados, os dados são simulados via JavaScript. A lógica de negócio (bloqueio por inadimplência, cancelamento com 3 dias de antecedência) é implementada com dados mockados. Em versões futuras recomenda-se backend com loaders/spinners para requisições e timeout de requisição com mensagem amigável.
 
 ---
 
@@ -394,121 +435,138 @@ AeroclubAsasAbertas/
 
 #### 5.1 Repositório de Prompts
 
-**Prompt 1 – Campos do Formulário de Cadastro de Aluno**
-> "Quais informações são necessárias para cadastrar um aluno em uma escola de pilotagem civil no Brasil? Considere dados pessoais, documentação aeronáutica e informações de contato de emergência."
+**Prompt 1 — Campos do Formulário de Cadastro de Aluno**
+> _"Quais informações são necessárias para cadastrar um aluno em uma escola de pilotagem civil no Brasil? Considere dados pessoais, documentação aeronáutica e informações de contato de emergência."_
 
-**Prompt 2 – Campos do Formulário de Cadastro de Professor/Instrutor**
-> "Quais informações são necessárias para cadastrar um instrutor de voo em um aeroclube no Brasil? Considere habilitações, horas de voo e especializações."
+✅ **Resultado:** Nome Completo, CPF, RG, Data de Nascimento, E-mail, Telefone, Endereço, CMA, Experiência Anterior.
+⚠️ **Ajuste:** A IA sugeriu 'número de passaporte', inaplicável ao contexto nacional — removido manualmente.
 
-**Prompt 3 – Estrutura da Agenda de Agendamentos**
-> "Em uma agenda de marcação de horários para escola de pilotagem e aluguel de aeronaves, quais tipos de serviço e campos adicionais devem estar disponíveis para garantir um agendamento completo e sem conflitos?"
+---
 
-**Prompt 4 – Geração de Imagem para Telas em Construção**
-> "Gere uma imagem de página em construção com temática de pilotagem de aviões, estilo ilustração vetorial, cores azul e branco, mostrando mecânicos trabalhando em um avião."
+**Prompt 2 — Campos do Formulário de Cadastro de Professor/Instrutor**
+> _"Quais informações são necessárias para cadastrar um instrutor de voo em um aeroclube no Brasil? Considere habilitações, horas de voo e especializações."_
+
+✅ **Resultado:** Nome, CPF, RG, Número de Licença, Categoria da Licença, Horas de Voo Totais, Anos de Experiência, Especializações.
+✅ **Ajuste:** Nenhum — saída diretamente aplicável ao design da tela.
+
+---
+
+**Prompt 3 — Estrutura da Agenda de Agendamentos**
+> _"Em uma agenda de marcação de horários para escola de pilotagem e aluguel de aeronaves, quais tipos de serviço e campos adicionais devem estar disponíveis para garantir um agendamento completo e sem conflitos?"_
+
+✅ **Resultado:** Tipos de serviço (Aula Teórica, Aula Prática/Voo, Simulador, Aluguel de Aeronave) e legenda de status de horários.
+⚠️ **Ajuste:** Campo de duração da aula sugerido pela IA foi omitido para manter o formulário mais simples.
+
+---
+
+**Prompt 4 — Geração de Imagem para Telas em Construção**
+> _"Gere uma imagem de página em construção com temática de pilotagem de aviões, estilo ilustração vetorial, cores azul e branco, mostrando mecânicos trabalhando em um avião."_
+
+✅ **Resultado:** Imagem utilizada em todas as telas marcadas como 'Em construção'.
+⚠️ **Ajuste:** Necessárias 3 iterações até obter o resultado visual adequado.
 
 #### 5.2 Relato de IA · Uso de IA no Código do Site
 
-Não foi utilizada Inteligência Artificial para a produção do código do site. Todo o código front-end (HTML, CSS e JavaScript) foi desenvolvido manualmente pela equipe do Squad 43. As ferramentas de IA foram empregadas apenas como apoio na validação de requisitos, na definição de campos de formulários e na geração de imagens temáticas para as telas em construção.
+> Não foi utilizada Inteligência Artificial para a produção do código do site. Todo o código front-end (HTML, CSS e JavaScript) foi desenvolvido manualmente pela equipe do Squad 43. As ferramentas de IA foram empregadas apenas como apoio na validação de requisitos, na definição de campos de formulários e na geração de imagens temáticas para as telas em construção.
 
 ---
 
 ### 6. Análise de Custos e Viabilidade
 
-#### 6.2 Análise de Custos
+#### 6.1 Custos de Desenvolvimento
+
+| Descrição | Quantidade |
+|-----------|------------|
+| Número de integrantes | 11 |
+| Horas trabalhadas por integrante | 20h |
+| Total de horas do projeto | 220h |
+| Valor/hora estimado | R$ 20,00 |
 
 | Categoria | Valor |
 |-----------|-------|
-| Mão de obra (11 integrantes × 20h × R$20/h) | R$ 4.400,00 |
-| Custos Operacionais (internet e energia) | R$ 300,00 |
+| Mão de obra | R$ 4.400,00 |
+| Energia elétrica e internet | R$ 300,00 |
 | **Total Geral Estimado** | **R$ 4.700,00** |
 
-Todas as ferramentas utilizadas (VS Code, Figma, GitHub, Gemini, Google Docs) são gratuitas, sem custos adicionais ao projeto.
+#### 6.2 Análise de Viabilidade
 
-#### 6.3 Análise de Viabilidade
+| Dimensão | Avaliação |
+|----------|-----------|
+| Técnica | ✅ Viável — tecnologias amplamente difundidas e estrutura modular para futuras integrações |
+| Financeira | ✅ Viável — custo baixo com ferramentas gratuitas e mão de obra acadêmica |
+| Operacional | ✅ Viável — interface intuitiva com perfis de acesso distintos |
+| Prazo | ✅ Viável — ~12 semanas contemplando todas as etapas |
 
-- **Técnica:** Tecnicamente viável com HTML, CSS3 e JavaScript. Estrutura modular facilita futuras integrações com backend, banco de dados e IA.
-- **Financeira:** Custo estimado baixo em relação aos benefícios. A digitalização tende a reduzir perdas de informação, retrabalho e erros em agendamentos.
-- **Operacional:** Interface intuitiva com perfis de acesso distintos para alunos, professores e administradores.
-- **Prazo:** Aproximadamente 12 semanas (levantamento de requisitos, design, desenvolvimento, testes e documentação).
+#### 6.3 Cronograma Estimado
 
-#### 6.4 Benefícios Esperados
-
-- Centralização de informações e redução de erros manuais
-- Melhor controle de agendamentos e histórico acadêmico
-- Redução de custos operacionais e retrabalho
-- Base tecnológica para futuras expansões com IA
+| Etapa | Prazo |
+|-------|-------|
+| Levantamento de requisitos | 2 semanas |
+| Protótipos e design | 2 semanas |
+| Desenvolvimento front-end | 5 semanas |
+| Testes e ajustes | 2 semanas |
+| Documentação final | 1 semana |
 
 ---
 
 ### 7. Evoluções Futuras
 
-- Conclusão dos módulos em construção: Financeiro, Documentos, Voos e Extrato
-- Integração com banco de dados para persistência das informações
-- Implementação de backend e APIs
-- Recursos de IA: análise preditiva de demanda e manutenção preventiva de aeronaves
+- [ ] Conclusão dos módulos em construção: Financeiro, Documentos, Voos e Extrato
+- [ ] Integração com banco de dados para persistência das informações
+- [ ] Implementação de backend e APIs
+- [ ] Recursos de IA: análise preditiva de demanda e manutenção preventiva de aeronaves
+- [ ] Autenticação real com controle de sessão
+- [ ] Notificações automáticas por e-mail/SMS
 
 ---
 
 ## 📽️ Demonstrações
 
-- Protótipo funcional: https://asasabertas-aero-clube.vercel.app/  
-- Vídeo do protótipo: [Assista aqui](https://lnkd.in/dZ5u4z6Z) 🎬  
-- Pitch Deck: [Assista ao Pitch](https://lnkd.in/dhV3dBw7) 📊  
+| Recurso | Link |
+|---------|------|
+| 🌐 Protótipo funcional | [asasabertas-aero-clube.vercel.app](https://asasabertas-aero-clube.vercel.app/) |
+| 🎬 Vídeo do protótipo | [Assista aqui](https://lnkd.in/dZ5u4z6Z) |
+| 📊 Pitch Deck | [Assista ao Pitch](https://lnkd.in/dhV3dBw7) |
+| 💻 Repositório do Aplicativo | [github.com/p3drolucassp/AsasabertasAeroClube](https://github.com/p3drolucassp/AsasabertasAeroClube) |
+| 📖 README do Projeto | [github.com/thaynabds/AeroclubAsasAbertas](https://github.com/thaynabds/AeroclubAsasAbertas) |
 
 ---
 
-## 📄 License
+## 📄 Licença
 
-**Copyright © 2026, Membros do Esquadrão 43 do Rise Up; — Sistema de Gestão do Aeroclube Asas Abertas 🛩️. Todos os direitos reservados.** 🔒
+**Copyright © 2026, Membros do Squad 43 do Rise Up — Sistema de Gestão do Aeroclube Asas Abertas 🛩️. Todos os direitos reservados.** 🔒
 
 **Obrigado pela visita! ⭐ Não se esqueça de dar uma estrela ao projeto se gostou!** 🌟
 
 ---
 
-## 📞 Contato 📬
+## 📞 Contato
 
 <div align="center">
 
   <a href="https://br.linkedin.com/in/thaynabds" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
   </a>
-  
   <a href="https://www.instagram.com/thaynabdstec/" target="_blank">
     <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" />
   </a>
 
 </div>
 
-📧 **Email:** [thaynabdstec@gmail.com](mailto:thaynabdstec@gmail.com) ✉️
-
-📱 **Phone:** +55 (81) 97912-6121 📞
+📧 **Email:** [thaynabdstec@gmail.com](mailto:thaynabdstec@gmail.com)  
+📱 **Phone:** +55 (81) 97912-6121
 
 ---
 
 <div align="center">
 
 ### 👤 Thayná Batista da Silva
-**Scrum Master • Product Designer • Requirements Analyst** 💼
-
-Senac Recife-PE Faculty | Systems Analysis and Development 🎓
-
-</div>
-
----
-
-<div align="center">
-
-**Thank you for visiting! ⭐ Don't forget to star the project if you liked it!** 🌟
+**Scrum Master • Product Designer • Requirements Analyst** 💼  
+Faculdade Senac Recife-PE | Análise e Desenvolvimento de Sistemas 🎓
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://br.linkedin.com/in/thaynabds)
 [![Instagram](https://img.shields.io/badge/Instagram-Follow-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/thaynabdstec/)
 
-</div>
-
----
-
-<div align="center">
-
-**Copyright © 2026, Members of Squad 43 of Rise Up; — Asas Abertas Aeroclub Management System 🛩️. All rights reserved.**
+**Copyright © 2026, Members of Squad 43 of Rise Up — Asas Abertas Aeroclub Management System 🛩️. All rights reserved.**
 
 </div>
