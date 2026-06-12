@@ -137,8 +137,7 @@ O modelo de negócio futuro pressupõe licenciamento da plataforma para aeroclub
 - 🖥️ **Figma**
 - 🚀 **Vercel**
 - 📅 **Scrum**
-- 🤝 **NTTDATA via Residência em Software & Inteligência Artificial em parceria com a Faculdade Senac Recife-PE.**
-- 🏢 **Porto Digital**
+- 🤝 **NTTDATA via Residência em Software & Inteligência Artificial em parceria com a Faculdade Senac Recife-PE no Rise Up do Porto Digital.**
 
 ---
 
