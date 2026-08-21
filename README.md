@@ -1,3 +1,14 @@
+<div align="center">
+
+## 🌐 Idioma / Language
+
+[![Português](https://img.shields.io/badge/🇧🇷_Português-selecionado-2ea44f?style=for-the-badge)](./README.md)
+[![English](https://img.shields.io/badge/🇺🇸_English-click_here-lightgrey?style=for-the-badge)](./README.en.md)
+
+</div>
+
+---
+
 # 🛩️ Sistema de Gerenciamento de Agenda e Aulas — Aeroclube Asas Abertas
 
 **Protótipo desenvolvido no RiseUp 2026.1 | Porto Digital + NTTDATA via Residência em Software & Inteligência Artificial em parceria com a Faculdade Senac Recife-PE.**
@@ -553,7 +564,7 @@ Como o projeto é exclusivamente front-end sem banco de dados, os dados são sim
 
 </div>
 
-📧 **Email:** [thaynabdstec@gmail.com](mailto:thaynabdstec@gmail.com)  
+📧 **Email:** [thaynabdstec@gmail.com](mailto:thaynabdstec@gmail.com)
 📱 **Phone:** +55 (81) 97912-6121
 
 ---
@@ -561,7 +572,7 @@ Como o projeto é exclusivamente front-end sem banco de dados, os dados são sim
 <div align="center">
 
 ### 👤 Thayná Batista da Silva
-**Scrum Master • Product Designer • Requirements Analyst** 💼  
+**Scrum Master • Product Designer • Requirements Analyst** 💼
 Faculdade Senac Recife-PE | Análise e Desenvolvimento de Sistemas 🎓
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://br.linkedin.com/in/thaynabds)
